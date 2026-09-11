@@ -20,7 +20,16 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "paths": {
+      "@/*": ["./src/*"],
+      "@app/*": ["./src/app/*"],
+      "@router/*": ["./src/app/router/*"],
+      "@components/*": ["./src/components/*"],
+      "@domains/*": ["./src/domains/*"],
+      "@i18n/*": ["./src/i18n/*"],
+      "@layouts/*": ["./src/layouts/*"]
+    }
   },
 
   /* Paths aliases */
