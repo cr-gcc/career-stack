@@ -22,5 +22,7 @@
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true
   },
+
+  /* Paths aliases */
   "include": ["src"]
 }
