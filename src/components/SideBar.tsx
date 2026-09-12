@@ -2,7 +2,7 @@ export function SideBar() {
     return (
         <aside className="w-56 bg-surface border-r border-border sticky top-0 h-screen shrink-0 z-40 flex flex-col transition-all duration-300 overflow-y-auto custom-scrollbar">
             <div className="flex h-16 shrink-0 items-center px-6">
-                <p className="text-xl font-bold text-text">CVC</p>
+                <p className="text-xl font-bold text-emphasis">CVC</p>
             </div>
             <nav className="flex flex-1 flex-col px-4 py-4">
                 <ul className="space-y-1 text-sm font-medium text-text-secondary">

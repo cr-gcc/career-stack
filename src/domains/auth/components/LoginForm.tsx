@@ -10,7 +10,7 @@ export function LoginForm() {
         <CardBasico>
             <div className="flex flex-col px-2 py-1">
                 <div className="mt-1.5 mb-6">
-                    <h5 className="h5 text-text-primay">
+                    <h5 className="h5">
                         ¡Bienvenido de nuevo!
                     </h5>
                     <p className="text-sm text-text-secondary">
@@ -36,7 +36,7 @@ export function LoginForm() {
                     />
                 </div>
                 <div className="flex justify-center mb-4">
-                    <a href="#" className="text-xs text-text-secondary">
+                    <a href="#" className="text-xs text-text-secondary hover:text-emphasis transition-colors">
                         ¿Olvidaste tu contraseña?
                     </a>
                 </div>
@@ -50,7 +50,7 @@ export function LoginForm() {
                 </div>
                 <div className="mb-4 text-center">
                     <p className="text-xs text-text-secondary">
-                        Al continuar, aceptas los <a href="#" className="text-text-primary underline">Términos de Servicio</a> y la <a href="#" className="text-text-primary underline">Política de Privacidad</a>
+                        Al continuar, aceptas los <a href="#" className="text-emphasis underline hover:text-primary transition-colors">Términos de Servicio</a> y la <a href="#" className="text-emphasis underline hover:text-primary transition-colors">Política de Privacidad</a>
                     </p>
                 </div>
             </div>

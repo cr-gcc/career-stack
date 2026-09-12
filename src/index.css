@@ -3,63 +3,78 @@
 
 :root {
   font-family: "Manrope", sans-serif;
-  --color-background: #F1F5F9;
-  --color-surface: #FFFFFF;
-  --color-surface-secondary: #F8FAFC;
 
-  --color-text: #020617;
-  --color-text-secondary: #64748B;
+  /* Base */
+  --color-background: #D6DBE3;
+  --color-surface: #E4E8ED;
+  --color-surface-secondary: #EDF0F3;
 
-  --color-border: #E2E8F0;
+  /* Contraste fuerte */
+  --color-emphasis: #172033;
 
-  --color-primary: #B91C1C;
-  --color-primary-hover: #991B1B;
-  --color-primary-soft: #FEF2F2;
+  /* Texto */
+  --color-text: #1E293B;
+  --color-text-secondary: #667085;
+
+  /* Bordes */
+  --color-border: #B7C0CC;
+
+  /* Brand */
+  --color-primary: #B4232D;
+  --color-primary-hover: #921C25;
+  --color-primary-soft: #E8C7CA;
 }
 
 @theme {
   --color-background: var(--color-background);
   --color-surface: var(--color-surface);
   --color-surface-secondary: var(--color-surface-secondary);
+
+  --color-emphasis: var(--color-emphasis);
+
   --color-text: var(--color-text);
   --color-text-secondary: var(--color-text-secondary);
+
   --color-border: var(--color-border);
+
   --color-primary: var(--color-primary);
   --color-primary-hover: var(--color-primary-hover);
   --color-primary-soft: var(--color-primary-soft);
 }
 
 [data-theme="dark"] {
-  --color-background: #020617;
-  --color-surface: #0F172A;
-  --color-surface-secondary: #1E293B;
+  --color-background: #0B111B;
+  --color-surface: #111827;
+  --color-surface-secondary: #1B2432;
 
-  --color-text: #F1F5F9;
+  --color-emphasis: #F1F5F9;
+
+  --color-text: #E5E7EB;
   --color-text-secondary: #94A3B8;
 
   --color-border: #334155;
 
-  --color-primary: #DC2626;
-  --color-primary-hover: #B91C1C;
-  --color-primary-soft: #450A0A;
+  --color-primary: #D13A43;
+  --color-primary-hover: #B4232D;
+  --color-primary-soft: #4A171C;
 }
 
 .h1 {
-  @apply text-5xl font-semibold;
+  @apply text-5xl font-semibold text-emphasis;
 }
 
 .h2 {
-  @apply text-4xl font-semibold;
+  @apply text-4xl font-semibold text-emphasis;
 }
 
 .h3 {
-  @apply text-3xl font-semibold;
+  @apply text-3xl font-semibold text-emphasis;
 }
 
 .h4 {
-  @apply text-2xl font-semibold;
+  @apply text-2xl font-semibold text-emphasis;
 }
 
 .h5 {
-  @apply text-xl font-semibold;
+  @apply text-xl font-semibold text-emphasis;
 }
