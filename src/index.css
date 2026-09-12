@@ -1,1 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 @import "tailwindcss";
+
+:root {
+  font-family: "Manrope", sans-serif;
+  --color-background: #F1F5F9;
+  --color-surface: #FFFFFF;
+  --color-surface-secondary: #F8FAFC;
+
+  --color-text: #020617;
+  --color-text-secondary: #64748B;
+
+  --color-border: #E2E8F0;
+
+  --color-primary: #B91C1C;
+  --color-primary-hover: #991B1B;
+  --color-primary-soft: #FEF2F2;
+}
+
+@theme {
+  --color-background: var(--color-background);
+  --color-surface: var(--color-surface);
+  --color-surface-secondary: var(--color-surface-secondary);
+  --color-text: var(--color-text);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-border: var(--color-border);
+  --color-primary: var(--color-primary);
+  --color-primary-hover: var(--color-primary-hover);
+  --color-primary-soft: var(--color-primary-soft);
+}
+
+[data-theme="dark"] {
+  --color-background: #020617;
+  --color-surface: #0F172A;
+  --color-surface-secondary: #1E293B;
+
+  --color-text: #F1F5F9;
+  --color-text-secondary: #94A3B8;
+
+  --color-border: #334155;
+
+  --color-primary: #DC2626;
+  --color-primary-hover: #B91C1C;
+  --color-primary-soft: #450A0A;
+}
+
+.h1 {
+  @apply text-5xl font-semibold;
+}
+
+.h2 {
+  @apply text-4xl font-semibold;
+}
+
+.h3 {
+  @apply text-3xl font-semibold;
+}
+
+.h4 {
+  @apply text-2xl font-semibold;
+}
+
+.h5 {
+  @apply text-xl font-semibold;
+}
