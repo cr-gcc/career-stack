@@ -1,8 +1,11 @@
 import { Outlet } from 'react-router'
 import { Header } from "@components/layouts/Header"
 import { SideBar } from "@components/layouts/SideBar"
+import { ProfileModal } from "@components/common/ProfileModal"
+import { useUIStore } from "@stores/uiStore"
 
 export function MainLayout() {
+    const { activeModal } = useUIStore()
     return (
         <div className="flex min-h-screen bg-background">
             <SideBar />
@@ -11,6 +14,7 @@ export function MainLayout() {
                 <main id="main" className="flex-1 overflow-y-auto p-4 sm:px-6 lg:px-8">
                     <Outlet />
                 </main>
+                {activeModal && activeModal === 'profile' && <ProfileModal />}
             </div>
         </div>
     )
