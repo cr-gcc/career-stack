@@ -2,7 +2,10 @@ import { createBrowserRouter } from "react-router";
 import { BlankLayout } from "@layouts/BlankLayout";
 import { LoginPage } from "@domains/auth/pages/LoginPage";
 import { MainLayout } from "@layouts/MainLayout";
-import { ResumePage } from "@domains/resume/pages/ResumePage";
+import { HomePage } from "@domains/user/pages/HomePage";
+import { CvsPage } from "@domains/user/pages/CvsPage";
+import { EditorPage } from "@domains/admin/pages/EditorPage";
+import { JobVacancy } from "@domains/admin/pages/JobVacancy";
 
 export const router = createBrowserRouter([
     {
@@ -20,7 +23,19 @@ export const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                element: <ResumePage />
+                element: <HomePage />
+            },
+            {
+                path: '/cvs',
+                element: <CvsPage />
+            },
+            {
+                path: '/editor',
+                element: <EditorPage />
+            },
+            {
+                path: '/job-vacancy',
+                element: <JobVacancy />
             }
         ]
     }
