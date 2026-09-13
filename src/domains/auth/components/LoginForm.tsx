@@ -46,6 +46,7 @@ export function LoginForm() {
                     <ButtonIcon
                         icon={<SlLogin />}
                         label={t('auth.login.submit')}
+                        labelPositionIcon="left"
                         className="w-full text-sm text-white bg-primary hover:bg-primary-hover"
                         onClick={() => alert("Iniciando sesión...")}
                     />

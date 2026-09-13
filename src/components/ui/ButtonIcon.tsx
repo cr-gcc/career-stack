@@ -1,25 +1,26 @@
-interface ButtonIconProps {
-    icon?: React.ReactNode;
-    label?: string;
+type LabelPositionIcon = 'right' | 'left';
+export interface ButtonIconProps {
     className?: string;
+    label?: string;
+    icon?: React.ReactNode;
+    labelPositionIcon?: LabelPositionIcon;
     onClick?: () => void;
 }
 export function ButtonIcon({
     icon,
     label,
     className,
+    labelPositionIcon = 'right',
     onClick
 }: ButtonIconProps) {
-    const separatore = () => {
-        if (label && icon) return "pl-2"
-        else return ''
-    }
     return (
         <button
             onClick={onClick}
-            className={`cursor-pointer flex items-center justify-center px-2 py-1 rounded-md transition-colors ${className}`}
+            className={`cursor-pointer flex items-center justify-center gap-2 px-2 py-1 rounded-md transition-colors ${className}`}
         >
-            {label}<span className={separatore()}>{icon}</span>
+            {labelPositionIcon === 'right' && icon}
+            {label && <span>{label}</span>}
+            {labelPositionIcon === 'left' && icon}
         </button>
     )
 }
