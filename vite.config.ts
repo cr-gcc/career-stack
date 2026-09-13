@@ -15,7 +15,8 @@ export default defineConfig(() => {
                 "@components": path.resolve(import.meta.dirname, "./src/components"),
                 "@domains": path.resolve(import.meta.dirname, "./src/domains"),
                 "@i18n": path.resolve(import.meta.dirname, "./src/i18n"),
-                "@layouts": path.resolve(import.meta.dirname, "./src/layouts")
+                "@layouts": path.resolve(import.meta.dirname, "./src/layouts"),
+                "@stores": path.resolve(import.meta.dirname, "./src/stores")
             },
         },
     }
