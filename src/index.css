@@ -13,8 +13,8 @@
   --color-emphasis: #172033;
 
   /* Texto */
-  --color-text: #1E293B;
-  --color-text-secondary: #667085;
+  --color-t: #1E293B;
+  --color-ts: #667085;
 
   /* Bordes */
   --color-border: #B7C0CC;
@@ -32,8 +32,8 @@
 
   --color-emphasis: var(--color-emphasis);
 
-  --color-text: var(--color-text);
-  --color-text-secondary: var(--color-text-secondary);
+  --color-t: var(--color-t);
+  --color-ts: var(--color-ts);
 
   --color-border: var(--color-border);
 
@@ -49,8 +49,8 @@
 
   --color-emphasis: #F1F5F9;
 
-  --color-text: #E5E7EB;
-  --color-text-secondary: #94A3B8;
+  --color-t: #E5E7EB;
+  --color-ts: #94A3B8;
 
   --color-border: #334155;
 
@@ -60,21 +60,21 @@
 }
 
 .h1 {
-  @apply text-5xl font-semibold text-emphasis;
+  @apply text-5xl font-semibold;
 }
 
 .h2 {
-  @apply text-4xl font-semibold text-emphasis;
+  @apply text-4xl font-semibold;
 }
 
 .h3 {
-  @apply text-3xl font-semibold text-emphasis;
+  @apply text-3xl font-semibold;
 }
 
 .h4 {
-  @apply text-2xl font-semibold text-emphasis;
+  @apply text-2xl font-semibold;
 }
 
 .h5 {
-  @apply text-xl font-semibold text-emphasis;
+  @apply text-xl font-semibold;
 }
