@@ -1,10 +1,10 @@
 import type { ReactNode } from 'react'
 
-interface CardBasicoProps {
+interface CardBaseProps {
     children: ReactNode
 }
 
-export function CardBasico({ children }: CardBasicoProps) {
+export function CardBase({ children }: CardBaseProps) {
     return (
         <article className="rounded-xl border border-border bg-surface-secondary px-4 pb-2 pt-1.75 shadow-md">
             <div className="flex items-center gap-4">

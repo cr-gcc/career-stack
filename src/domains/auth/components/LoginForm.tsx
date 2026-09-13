@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next'
-import { CardBasico } from "@/components/ui/CardBasico";
+import { CardBase } from "@/components/ui/CardBase";
 import { InputLabelIcon } from "@/components/ui/InputLabelIcon";
 import { ButtonIcon } from "@/components/ui/ButtonIcon";
 import { MdOutlineEmail } from "react-icons/md";
@@ -9,7 +9,7 @@ import { SlLogin } from "react-icons/sl";
 export function LoginForm() {
     const { t } = useTranslation()
     return (
-        <CardBasico>
+        <CardBase>
             <div className="flex flex-col px-2 py-1">
                 <div className="mt-1.5 mb-6">
                     <h5 className="h5 text-primary">
@@ -57,6 +57,6 @@ export function LoginForm() {
                     </p>
                 </div>
             </div>
-        </CardBasico>
+        </CardBase>
     )
 }

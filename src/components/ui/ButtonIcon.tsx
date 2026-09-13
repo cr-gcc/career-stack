@@ -16,7 +16,7 @@ export function ButtonIcon({
     return (
         <button
             onClick={onClick}
-            className={`cursor-pointer flex items-center justify-center gap-2 px-2 py-1 rounded-md transition-colors ${className}`}
+            className={`cursor-pointer flex items-center justify-center gap-1 px-2 py-1 rounded-md transition-colors ${className}`}
         >
             {labelPositionIcon === 'right' && icon}
             {label && <span>{label}</span>}
