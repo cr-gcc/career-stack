@@ -1,10 +1,12 @@
-import { LinkIcon } from "@/components/ui/LinkIcon";
+import { IoDocumentTextSharp, IoDocumentsSharp } from "react-icons/io5";
 import { useTranslation } from "react-i18next";
 import { GrDocumentText } from "react-icons/gr";
 import { MdEditDocument } from "react-icons/md";
 import { IoLogoLinkedin } from "react-icons/io5";
-import { IoDocumentTextSharp, IoDocumentsSharp } from "react-icons/io5";
-import { useUIStore } from "@/stores/uiStore"
+import { MdOutlineLanguage } from "react-icons/md";
+import { LinkIcon } from "@components/ui/LinkIcon";
+import { Dropdown } from "@components/ui/Dropdown";
+import { useUIStore } from "@stores/uiStore"
 
 export function SideBar() {
     const { t } = useTranslation();
@@ -51,16 +53,6 @@ export function SideBar() {
                     </li>
                 </ul>
             </nav>
-            <div className="w-full bg-surface border-t border-border p-4  flex items-center gap-3">
-                <div className="flex-1">
-                    <p className="truncate text-sm font-semibold text-tp">
-                        Cristobal Gutierrez
-                    </p>
-                    <p className="truncate text-xs text-ts">
-                        cris.gcc@outlook.com
-                    </p>
-                </div>
-            </div>
         </aside>
     )
 }

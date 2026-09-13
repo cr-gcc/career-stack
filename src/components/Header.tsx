@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { MdLightMode, MdDarkMode } from "react-icons/md";
 import { RiSidebarFoldFill, RiSidebarUnfoldFill } from "react-icons/ri";
+import { FaUserCircle } from "react-icons/fa";
 import { ButtonIcon } from "@/components/ui/ButtonIcon"
 import { useThemeStore } from "@/stores/themeStore"
 import { useUIStore } from "@/stores/uiStore"
@@ -23,7 +24,7 @@ export function Header() {
                 <div className="flex h-16 items-center justify-between">
                     <div className="flex items-center justify-end w-full">
                         <nav aria-label="Global" className="hidden md:block">
-                            <ul className="flex items-center gap-6 text-sm text-ts">
+                            <ul className="flex items-center gap-2 text-sm text-ts">
                                 <li>
                                     <ButtonIcon
                                         icon={sidebarOpen ? <RiSidebarFoldFill /> : <RiSidebarUnfoldFill />}
@@ -43,6 +44,13 @@ export function Header() {
                                         icon={theme === 'light' ? <MdLightMode /> : <MdDarkMode />}
                                         className="text-xl hover:text-primary transition-colors"
                                         onClick={toggleTheme}
+                                    />
+                                </li>
+                                <li>
+                                    <ButtonIcon
+                                        icon={<FaUserCircle />}
+                                        className="text-xl hover:text-primary transition-colors"
+                                        onClick={() => { alert("En desarrollo.") }}
                                     />
                                 </li>
                             </ul>
