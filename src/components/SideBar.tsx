@@ -1,46 +1,62 @@
+import { LinkIcon } from "@/components/ui/LinkIcon";
+import { useTranslation } from "react-i18next";
+import { GrDocumentText } from "react-icons/gr";
+import { MdEditDocument } from "react-icons/md";
+import { IoLogoLinkedin } from "react-icons/io5";
+import { IoDocumentTextSharp, IoDocumentsSharp } from "react-icons/io5";
+
+
+
 export function SideBar() {
+    const { t } = useTranslation();
+
     return (
-        <aside className="w-56 bg-surface border-r border-border sticky top-0 h-screen shrink-0 z-40 flex flex-col transition-all duration-300 overflow-y-auto custom-scrollbar">
+        <aside className="w-50 bg-surface border-r border-border sticky top-0 h-screen shrink-0 z-40 flex flex-col transition-all duration-300 overflow-y-auto custom-scrollbar">
             <div className="flex h-16 shrink-0 items-center px-6">
-                <p className="text-xl font-bold text-emphasis">CVC</p>
+                <GrDocumentText size={35} className="text-primary" />
             </div>
             <nav className="flex flex-1 flex-col px-4 py-4">
-                <ul className="space-y-1 text-sm font-medium text-text-secondary">
+                <ul className="space-y-1 text-sm font-medium text-ts">
                     <li>
-                        <a href="#" className="flex items-center gap-3 px-3 py-2 rounded-md bg-primary-soft text-primary transition-colors">
-                            Inicio
-                        </a>
+                        <LinkIcon
+                            url="/"
+                            label={t('sidebar.home')}
+                            icon={<IoDocumentTextSharp size={16} />}
+                            className="text-ts hover:bg-primary-soft hover:text-primary transition-colors"
+                        />
                     </li>
                     <li>
-                        <a href="#" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-surface-secondary hover:text-text transition-colors">
-                            Mis CVs
-                        </a>
+                        <LinkIcon
+                            url="/cvs"
+                            label={t('sidebar.myCVs')}
+                            icon={<IoDocumentsSharp size={16} />}
+                            className="text-ts hover:bg-primary-soft hover:text-primary transition-colors"
+                        />
                     </li>
                     <li>
-                        <a href="#" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-surface-secondary hover:text-text transition-colors">
-                            Editor
-                        </a>
+                        <LinkIcon
+                            url="/editor"
+                            label={t('sidebar.editor')}
+                            icon={<MdEditDocument size={16} />}
+                            className="text-ts hover:bg-primary-soft hover:text-primary transition-colors"
+                        />
                     </li>
                     <li>
-                        <a href="#" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-surface-secondary hover:text-text transition-colors">
-                            Vacantes
-                        </a>
+                        <LinkIcon
+                            url="/job-vacancy"
+                            label={t('sidebar.vacancies')}
+                            icon={<IoLogoLinkedin size={16} />}
+                            className="text-ts hover:bg-primary-soft hover:text-primary transition-colors"
+                        />
                     </li>
                 </ul>
             </nav>
-
-            <div className="p-4 m-4 rounded-xl border border-border bg-surface-secondary flex items-center gap-3">
-                <div
-                    className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-semibold text-white"
-                >
-                    CG
-                </div>
-
-                <div className="min-w-0 flex-1">
-                    <p className="truncate text-sm font-semibold text-text">
+            <div className="w-full p-4 border-t border-border bg-surface-secondary flex items-center gap-3">
+                <div className="flex-1">
+                    <p className="truncate text-sm font-semibold text-t">
                         Cristobal Gutierrez
                     </p>
-                    <p className="truncate text-xs text-text-secondary">
+                    <p className="truncate text-xs text-ts">
                         cris.gcc@outlook.com
                     </p>
                 </div>
