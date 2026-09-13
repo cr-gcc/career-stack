@@ -1,6 +1,6 @@
 import { RouterProvider } from 'react-router-dom'
 import { router } from '@router/router'
-import { ThemeSync } from '@/components/theme/ThemeSync'
+import { ThemeSync } from '@components/theme/ThemeSync'
 
 function App() {
     return (

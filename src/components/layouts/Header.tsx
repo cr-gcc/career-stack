@@ -1,10 +1,10 @@
 import { useTranslation } from "react-i18next";
 import { MdLightMode, MdDarkMode } from "react-icons/md";
 import { RiSidebarFoldFill, RiSidebarUnfoldFill } from "react-icons/ri";
-import { FaUserCircle } from "react-icons/fa";
-import { ButtonIcon } from "@/components/ui/ButtonIcon"
-import { useThemeStore } from "@/stores/themeStore"
-import { useUIStore } from "@/stores/uiStore"
+import { ButtonIcon } from "@components/ui/ButtonIcon"
+import { useThemeStore } from "@stores/themeStore"
+import { useUIStore } from "@stores/uiStore"
+import { DropdownMenuUser } from "@/components/common/DropdownMenuUser";
 
 export function Header() {
     const { i18n } = useTranslation()
@@ -47,11 +47,7 @@ export function Header() {
                                     />
                                 </li>
                                 <li>
-                                    <ButtonIcon
-                                        icon={<FaUserCircle />}
-                                        className="text-xl hover:text-primary transition-colors"
-                                        onClick={() => { alert("En desarrollo.") }}
-                                    />
+                                    <DropdownMenuUser />
                                 </li>
                             </ul>
                         </nav>

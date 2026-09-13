@@ -3,9 +3,7 @@ import { useTranslation } from "react-i18next";
 import { GrDocumentText } from "react-icons/gr";
 import { MdEditDocument } from "react-icons/md";
 import { IoLogoLinkedin } from "react-icons/io5";
-import { MdOutlineLanguage } from "react-icons/md";
 import { LinkIcon } from "@components/ui/LinkIcon";
-import { Dropdown } from "@components/ui/Dropdown";
 import { useUIStore } from "@stores/uiStore"
 
 export function SideBar() {
