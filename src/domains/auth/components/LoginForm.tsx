@@ -12,7 +12,7 @@ export function LoginForm() {
         <CardBasico>
             <div className="flex flex-col px-2 py-1">
                 <div className="mt-1.5 mb-6">
-                    <h5 className="h5">
+                    <h5 className="h5 text-primary">
                         {t('auth.login.title')}
                     </h5>
                     <p className="text-sm text-ts">

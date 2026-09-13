@@ -1,16 +1,21 @@
-import LoginBanner from '@/assets/images/banners/login.png';
+import LoginBannerLight from '@/assets/images/banners/login-light.png';
+import LoginBannerDark from '@/assets/images/banners/login-dark.png';
 import { useTranslation } from 'react-i18next'
 import { LoginForm } from '@/domains/auth/components/LoginForm';
 import { BasicInfoLogin } from '@/domains/auth/components/BasicInfoLogin';
 import { ButtonIcon } from "@/components/ui/ButtonIcon";
+import { useThemeStore } from "@/stores/themeStore"
 
 export function LoginPage() {
     const { i18n } = useTranslation()
+    const theme = useThemeStore((state) => state.theme)
 
     const toggleLanguage = () => {
         const nextLang = i18n.language.startsWith('es') ? 'en' : 'es'
         i18n.changeLanguage(nextLang)
     }
+
+    const LoginBanner = theme === 'light' ? LoginBannerLight : LoginBannerDark
 
     return (
         <div
