@@ -1,16 +1,19 @@
+import { useUIStore } from "@stores/uiStore"
 import { DropdownMenu } from "@components/ui/DropdownMenu";
 import { FaUserCircle } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 
 export function DropdownMenuUser() {
+    const { toggleModal } = useUIStore()
     const { t } = useTranslation()
+
     return (
         <DropdownMenu
             icon={<FaUserCircle />}
             className="text-xl hover:text-primary transition-colors"
         >
             <button
-                onClick={() => alert("Perfil")}
+                onClick={() => toggleModal('profile')}
                 className="cursor-pointer hover:text-primary transition-colors w-full text-start">
                 {t("dropdownMenuUser.profile")}
             </button>
