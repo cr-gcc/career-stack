@@ -3,11 +3,14 @@ import { MdLightMode, MdDarkMode } from "react-icons/md";
 import { RiSidebarFoldFill, RiSidebarUnfoldFill } from "react-icons/ri";
 import { ButtonIcon } from "@/components/ui/ButtonIcon"
 import { useThemeStore } from "@/stores/themeStore"
+import { useUIStore } from "@/stores/uiStore"
 
 export function Header() {
     const { i18n } = useTranslation()
     const theme = useThemeStore((state) => state.theme)
     const toggleTheme = useThemeStore((state) => state.toggleTheme)
+    const sidebarOpen = useUIStore((state) => state.sidebarOpen)
+    const toggleSidebar = useUIStore((state) => state.toggleSidebar)
 
     const toggleLanguage = () => {
         const nextLang = i18n.language.startsWith('es') ? 'en' : 'es'
@@ -23,8 +26,9 @@ export function Header() {
                             <ul className="flex items-center gap-6 text-sm text-ts">
                                 <li>
                                     <ButtonIcon
+                                        icon={sidebarOpen ? <RiSidebarFoldFill /> : <RiSidebarUnfoldFill />}
                                         className="text-xl hover:text-primary transition-colors"
-                                        icon={<RiSidebarFoldFill />}
+                                        onClick={toggleSidebar}
                                     />
                                 </li>
                                 <li>

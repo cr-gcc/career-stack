@@ -4,12 +4,14 @@ import { GrDocumentText } from "react-icons/gr";
 import { MdEditDocument } from "react-icons/md";
 import { IoLogoLinkedin } from "react-icons/io5";
 import { IoDocumentTextSharp, IoDocumentsSharp } from "react-icons/io5";
+import { useUIStore } from "@/stores/uiStore"
 
 export function SideBar() {
     const { t } = useTranslation();
+    const sidebarOpen = useUIStore((state) => state.sidebarOpen)
 
     return (
-        <aside className="w-42 bg-surface border-r border-border sticky top-0 h-screen shrink-0 z-40 flex flex-col transition-all duration-300 overflow-y-auto custom-scrollbar">
+        <aside className={`bg-surface border-r border-border sticky top-0 h-screen shrink-0 z-40 flex flex-col transition-[width] duration-300 overflow-y-auto custom-scrollbar ${sidebarOpen ? 'w-42' : 'w-0 border-r-0'}`}>
             <div className="flex h-16 shrink-0 items-center px-6">
                 <GrDocumentText size={35} className="text-primary" />
             </div>
