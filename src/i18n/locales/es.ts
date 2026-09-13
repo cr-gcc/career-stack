@@ -28,4 +28,31 @@ export const es = {
             privacyPolicy: 'Política de Privacidad',
         },
     },
+
+    sidebar: {
+        home: 'Inicio',
+        myCVs: 'Mis CVs',
+        editor: 'Editor',
+        vacancies: 'Vacantes',
+    },
+
+    home: {
+        title: 'Inicio',
+        subtitle: 'Datos generales del sistema, para la mejor toma de decisiones.',
+    },
+
+    cvs: {
+        title: 'Mis CVs',
+        subtitle: 'Historico de CVs creados disponibles.',
+    },
+
+    editor: {
+        title: 'Editor',
+        subtitle: 'Edición de información de todos los rubros del CV.',
+    },
+
+    vacancies: {
+        title: 'Vacantes',
+        subtitle: 'Ofertas de empleo disponibles, en las cuales podrás postular.',
+    }
 } as const

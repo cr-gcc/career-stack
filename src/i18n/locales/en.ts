@@ -1,5 +1,3 @@
-import { init } from "i18next";
-
 export const en = {
     common: {
         save: 'Save',
@@ -29,5 +27,32 @@ export const en = {
             and: 'and',
             privacyPolicy: 'Privacy Policy',
         },
+    },
+
+    sidebar: {
+        home: 'Home',
+        myCVs: 'My CVs',
+        editor: 'Editor',
+        vacancies: 'Vacancies',
+    },
+
+    home: {
+        title: 'Home',
+        subtitle: 'General system information, for better decision making.',
+    },
+
+    cvs: {
+        title: 'My CVs',
+        subtitle: 'History of available CVs created.',
+    },
+
+    editor: {
+        title: 'Editor',
+        subtitle: 'Editing information of all CV sections.',
+    },
+
+    vacancies: {
+        title: 'Vacancies',
+        subtitle: 'Available job offers, in which you can apply.',
     },
 } as const
