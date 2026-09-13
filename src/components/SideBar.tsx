@@ -43,8 +43,8 @@ export function SideBar() {
                     </li>
                     <li>
                         <LinkIcon
-                            url="/job-vacancy"
-                            label={t('sidebar.vacancies')}
+                            url="/job-offers"
+                            label={t('sidebar.jobOffers')}
                             icon={<IoLogoLinkedin size={16} />}
                             className="text-ts hover:bg-primary-soft hover:text-primary transition-colors"
                         />

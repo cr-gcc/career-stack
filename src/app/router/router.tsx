@@ -5,7 +5,7 @@ import { MainLayout } from "@layouts/MainLayout";
 import { HomePage } from "@domains/user/pages/HomePage";
 import { CvsPage } from "@domains/user/pages/CvsPage";
 import { EditorPage } from "@domains/admin/pages/EditorPage";
-import { JobVacancy } from "@domains/admin/pages/JobVacancy";
+import { JobOffersPage } from "@/domains/admin/pages/JobOffersPage";
 
 export const router = createBrowserRouter([
     {
@@ -34,8 +34,8 @@ export const router = createBrowserRouter([
                 element: <EditorPage />
             },
             {
-                path: '/job-vacancy',
-                element: <JobVacancy />
+                path: '/job-offers',
+                element: <JobOffersPage />
             }
         ]
     }

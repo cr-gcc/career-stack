@@ -33,7 +33,7 @@ export const es = {
         home: 'Inicio',
         myCVs: 'Mis CVs',
         editor: 'Editor',
-        vacancies: 'Vacantes',
+        jobOffers: 'Empleos',
     },
 
     home: {
@@ -51,8 +51,8 @@ export const es = {
         subtitle: 'Edición de información de todos los rubros del CV.',
     },
 
-    vacancies: {
-        title: 'Vacantes',
+    jobOffers: {
+        title: 'Ofertas de Empleo',
         subtitle: 'Ofertas de empleo disponibles, en las cuales podrás postular.',
     }
 } as const
