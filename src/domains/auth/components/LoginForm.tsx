@@ -15,7 +15,7 @@ export function LoginForm() {
                     <h5 className="h5">
                         {t('auth.login.title')}
                     </h5>
-                    <p className="text-sm text-text-secondary">
+                    <p className="text-sm text-ts">
                         {t('auth.login.subtitle')}
                     </p>
                 </div>
@@ -38,7 +38,7 @@ export function LoginForm() {
                     />
                 </div>
                 <div className="flex justify-center mb-4">
-                    <a href="#" className="text-xs text-text-secondary hover:text-emphasis transition-colors">
+                    <a href="#" className="text-xs text-ts hover:text-emphasis transition-colors">
                         {t('auth.login.forgotPassword')}
                     </a>
                 </div>
@@ -51,7 +51,7 @@ export function LoginForm() {
                     />
                 </div>
                 <div className="mb-4 text-center">
-                    <p className="text-xs text-text-secondary">
+                    <p className="text-xs text-ts">
                         {t('auth.login.initTerms')} <a href="#" className="text-emphasis underline hover:text-primary transition-colors">{t('auth.login.termsAndConditions')}</a> {t('auth.login.and')} <a href="#" className="text-emphasis underline hover:text-primary transition-colors">{t('auth.login.privacyPolicy')}</a>
                     </p>
                 </div>
