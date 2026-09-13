@@ -5,18 +5,16 @@ import { MdEditDocument } from "react-icons/md";
 import { IoLogoLinkedin } from "react-icons/io5";
 import { IoDocumentTextSharp, IoDocumentsSharp } from "react-icons/io5";
 
-
-
 export function SideBar() {
     const { t } = useTranslation();
 
     return (
-        <aside className="w-50 bg-surface border-r border-border sticky top-0 h-screen shrink-0 z-40 flex flex-col transition-all duration-300 overflow-y-auto custom-scrollbar">
+        <aside className="w-42 bg-surface border-r border-border sticky top-0 h-screen shrink-0 z-40 flex flex-col transition-all duration-300 overflow-y-auto custom-scrollbar">
             <div className="flex h-16 shrink-0 items-center px-6">
                 <GrDocumentText size={35} className="text-primary" />
             </div>
             <nav className="flex flex-1 flex-col px-4 py-4">
-                <ul className="space-y-1 text-sm font-medium text-ts">
+                <ul className="space-y-1 text-sm text-ts">
                     <li>
                         <LinkIcon
                             url="/"
@@ -51,9 +49,9 @@ export function SideBar() {
                     </li>
                 </ul>
             </nav>
-            <div className="w-full p-4 border-t border-border bg-surface-secondary flex items-center gap-3">
+            <div className="w-full bg-surface border-t border-border p-4  flex items-center gap-3">
                 <div className="flex-1">
-                    <p className="truncate text-sm font-semibold text-t">
+                    <p className="truncate text-sm font-semibold text-tp">
                         Cristobal Gutierrez
                     </p>
                     <p className="truncate text-xs text-ts">
