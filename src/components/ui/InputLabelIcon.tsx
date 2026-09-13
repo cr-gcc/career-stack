@@ -19,7 +19,7 @@ export function InputLabelIcon({ label, icon, id, type = "text", className = "",
                 <input
                     id={id}
                     type={type}
-                    className={`bg-transparent outline-none text-t placeholder:text-ts/50 ${className}`}
+                    className={`bg-transparent outline-none text-tp placeholder:text-ts/50 ${className}`}
                     {...props}
                 />
             </div>

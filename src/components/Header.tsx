@@ -2,9 +2,12 @@ import { useTranslation } from "react-i18next";
 import { MdLightMode, MdDarkMode } from "react-icons/md";
 import { RiSidebarFoldFill, RiSidebarUnfoldFill } from "react-icons/ri";
 import { ButtonIcon } from "@/components/ui/ButtonIcon"
+import { useThemeStore } from "@/stores/themeStore"
 
 export function Header() {
     const { i18n } = useTranslation()
+    const theme = useThemeStore((state) => state.theme)
+    const toggleTheme = useThemeStore((state) => state.toggleTheme)
 
     const toggleLanguage = () => {
         const nextLang = i18n.language.startsWith('es') ? 'en' : 'es'
@@ -33,8 +36,9 @@ export function Header() {
                                 </li>
                                 <li>
                                     <ButtonIcon
+                                        icon={theme === 'light' ? <MdLightMode /> : <MdDarkMode />}
                                         className="text-xl hover:text-primary transition-colors"
-                                        icon={<MdLightMode />}
+                                        onClick={toggleTheme}
                                     />
                                 </li>
                             </ul>

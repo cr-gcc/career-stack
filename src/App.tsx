@@ -1,9 +1,13 @@
 import { RouterProvider } from 'react-router-dom'
 import { router } from '@router/router'
+import { ThemeSync } from '@/components/theme/ThemeSync'
 
 function App() {
     return (
-        <RouterProvider router={router} />
+        <>
+            <ThemeSync />
+            <RouterProvider router={router} />
+        </>
     )
 }
 
