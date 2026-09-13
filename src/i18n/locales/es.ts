@@ -36,6 +36,11 @@ export const es = {
         jobOffers: 'Empleos',
     },
 
+    dropdownMenuUser: {
+        profile: 'Mi perfil',
+        logout: 'Cerrar sesión',
+    },
+
     home: {
         title: 'Inicio',
         subtitle: 'Datos generales del sistema, para la mejor toma de decisiones.',
