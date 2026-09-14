@@ -29,17 +29,12 @@ export function LoginPage() {
                     onClick={toggleLanguage}
                 />
             </div>
-            <div className="w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8">
-                {/* Oculto en móviles, visible desde tablets (md) */}
-                <div className="hidden md:flex flex-col justify-center py-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 w-full">
+                <div className="hidden md:flex justify-center py-10">
                     <BasicInfoLogin />
                 </div>
-                
-                {/* Formulario de Login adaptativo */}
-                <div className="flex justify-center items-center w-full">
-                    <div className="w-full max-w-md px-2 sm:px-6">
-                        <LoginForm />
-                    </div>
+                <div className="flex justify-center items-center">
+                    <LoginForm />
                 </div>
             </div>
         </div>
