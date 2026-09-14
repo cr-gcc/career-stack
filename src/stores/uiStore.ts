@@ -3,9 +3,10 @@ import { create } from 'zustand'
 type ModalType = 'profile' | null
 
 interface UIState {
-    // Sidebar State
-    sidebarOpen: boolean
-    toggleSidebar: () => void
+    // Menu State
+    menuOpen: boolean
+    toggleMenu: () => void
+    closeMenu: () => void
 
     // Modal State
     activeModal: ModalType
@@ -14,10 +15,14 @@ interface UIState {
 
 export const useUIStore = create<UIState>((set) => ({
     // Sidebar
-    sidebarOpen: true,
-    toggleSidebar: () =>
+    menuOpen: false,
+    toggleMenu: () =>
         set((state) => ({
-            sidebarOpen: !state.sidebarOpen,
+            menuOpen: !state.menuOpen,
+        })),
+    closeMenu: () =>
+        set(() => ({
+            menuOpen: false,
         })),
 
     // Modal

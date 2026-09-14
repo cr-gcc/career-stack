@@ -4,12 +4,14 @@ interface LinkIconProps {
     label?: string;
     className?: string;
     url?: string;
+    onClick?: () => void;
 }
 export function LinkIcon({
     icon,
     label,
     className,
-    url
+    url,
+    onClick
 }: LinkIconProps) {
     const separatore = () => {
         if (label && icon) return "pr-2"
@@ -18,6 +20,7 @@ export function LinkIcon({
     return (
         <Link
             to={url}
+            onClick={onClick}
             className={`flex items-center px-2 py-1 rounded-md transition-colors ${className}`}
         >
             <span className={separatore()}>{icon}</span>{label}

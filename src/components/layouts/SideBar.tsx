@@ -8,10 +8,10 @@ import { useUIStore } from "@stores/uiStore"
 
 export function SideBar() {
     const { t } = useTranslation();
-    const sidebarOpen = useUIStore((state) => state.sidebarOpen)
+    const menuOpen = useUIStore((state) => state.menuOpen)
 
     return (
-        <aside className={`bg-surface border-r border-border sticky top-0 h-screen shrink-0 z-40 flex flex-col transition-[width] duration-300 overflow-y-auto custom-scrollbar ${sidebarOpen ? 'w-42' : 'w-0 border-r-0'}`}>
+        <aside className={`hidden md:flex bg-surface border-r border-border sticky top-0 h-screen shrink-0 z-40 flex-col transition-[width] duration-300 overflow-y-auto custom-scrollbar ${menuOpen ? 'w-42' : 'w-0 border-r-0'}`}>
             <div className="flex h-16 shrink-0 items-center px-6">
                 <GrDocumentText size={35} className="text-primary" />
             </div>
