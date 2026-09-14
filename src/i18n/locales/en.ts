@@ -53,7 +53,34 @@ export const en = {
 
     editor: {
         title: 'Editor',
-        subtitle: 'Editing information of all CV sections.',
+        sections: {
+            generalInfo: 'General information',
+            profesionalProfile: 'Professional profile',
+            workExperiences: 'Work experiences',
+            education: 'Education',
+            skills: 'Skills',
+            repositories: 'Repositories',
+            portfolio: 'Portfolio',
+            extraInfo: 'Extra information',
+        },
+
+        fields: {
+            name: 'Name',
+            rol: 'Rol',
+            email: 'Email',
+            address: 'Address',
+            phone: 'Phone',
+            summary: 'Summary',
+            companyName: 'Company name',
+            dateRange: 'Date range',
+            description: 'Description',
+            education: 'Education',
+            area: 'Area. Example: Frontend',
+            tecnologies: 'Tecnologies. Example: React, Angular, Vue',
+            repositoryLink: 'Repository link',
+            portfolioLink: 'Portfolio link',
+            extraInfo: 'Extra information',
+        }
     },
 
     jobOffers: {

@@ -53,7 +53,35 @@ export const es = {
 
     editor: {
         title: 'Editor',
-        subtitle: 'Edición de información de todos los rubros del CV.',
+        sections: {
+            generalInfo: 'Información general',
+            profesionalProfile: 'Perfil profesional',
+            workExperiences: 'Experiencia laboral',
+            education: 'Formación académica',
+            skills: 'Habilidades',
+            repositories: 'Repositorios',
+            portfolio: 'Portafolio',
+            extraInfo: 'Información adicional',
+        },
+
+        fields: {
+            name: 'Nombre',
+            rol: 'Rol',
+            email: 'Correo electrónico',
+            address: 'Dirección',
+            phone: 'Teléfono',
+            summary: 'Resumen',
+            companyName: 'Nombre de la empresa',
+            dateRange: 'Rango de fechas',
+            description: 'Descripción',
+            education: 'Educación',
+            area: 'Área. Eje: Frontend',
+            tecnologies: 'Tecnologias. Eje: React, Angular, Vue',
+
+            repositoryLink: 'Enlace al repositorio',
+            portfolioLink: 'Enlace al portafolio',
+            extraInfo: 'Información adicional',
+        }
     },
 
     jobOffers: {
