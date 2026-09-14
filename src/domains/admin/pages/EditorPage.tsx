@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next";
 import { InputLabelIcon } from "@components/ui/InputLabelIcon";
 import { ButtonIcon } from "@components/ui/ButtonIcon";
 import { FaPlusCircle, FaMinusCircle } from "react-icons/fa";
+import { VscPreview } from "react-icons/vsc";
 
 export function EditorPage() {
     const { t } = useTranslation();
@@ -29,9 +30,35 @@ export function EditorPage() {
                             <textarea className="w-full rounded-lg border border-border bg-surface px-3 py-1 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors text-tp placeholder:text-ts/50 text-sm" placeholder={t('editor.fields.summary')}></textarea>
                         </div>
                     </div>
+                    <div id="editor-section-education" className="mb-2">
+                        <h5 className="h5 text-ts mb-1">{t('editor.sections.education')}</h5>
+                        <div className="flex flex-col gap-1 sm:gap-2 w-full">
+                            <textarea className="w-full rounded-lg border border-border bg-surface px-3 py-1 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors text-tp placeholder:text-ts/50 text-sm" placeholder={t('editor.fields.education')}></textarea>
+                        </div>
+                    </div>
+                    <div id="editor-section-repositories" className="mb-2">
+                        <h5 className="h5 text-ts mb-1">{t('editor.sections.repositories')}</h5>
+                        <div className="flex flex-col gap-1 sm:gap-2 w-full">
+                            <InputLabelIcon type="text" placeholder={t('editor.fields.repositoryLink')} className="w-full text-sm" />
+                        </div>
+                    </div>
+                    <div id="editor-section-portfolio" className="mb-2">
+                        <h5 className="h5 text-ts mb-1">{t('editor.sections.portfolio')}</h5>
+                        <div className="flex flex-col gap-1 sm:gap-2 w-full">
+                            <InputLabelIcon type="text" placeholder={t('editor.fields.portfolioLink')} className="w-full text-sm" />
+                        </div>
+                    </div>
+                    <div id="editor-section-extra-info">
+                        <h5 className="h5 text-ts mb-1">{t('editor.sections.extraInfo')}</h5>
+                        <div className="flex flex-col gap-1 sm:gap-2 w-full">
+                            <textarea className="w-full rounded-lg border border-border bg-surface px-3 py-1 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors text-tp placeholder:text-ts/50 text-sm" placeholder={t('editor.fields.extraInfo')}></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div className="flex flex-col gap-1 sm:gap-2 w-full">
                     <div id="editor-section-work-experiences" className="mb-2">
-                        <div className="flex justify-between w-full">
-                            <h5 className="h5 text-ts">{t('editor.sections.workExperiences')}</h5>
+                        <div className="flex justify-between items-center w-full">
+                            <h5 className="h5 text-ts mb-1">{t('editor.sections.workExperiences')}</h5>
                             <div className="flex">
                                 <ButtonIcon icon={<FaPlusCircle />} className="text-xs text-emphasis" />
                                 <ButtonIcon icon={<FaMinusCircle />} className="text-xs text-emphasis" />
@@ -47,15 +74,9 @@ export function EditorPage() {
                         </div>
                         <hr className="border-b border-border my-1" />
                     </div>
-                    <div id="editor-section-education" className="mb-2">
-                        <h5 className="h5 text-ts">{t('editor.sections.education')}</h5>
-                        <div className="flex flex-col gap-1 sm:gap-2 w-full">
-                            <textarea className="w-full rounded-lg border border-border bg-surface px-3 py-1 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors text-tp placeholder:text-ts/50 text-sm" placeholder={t('editor.fields.education')}></textarea>
-                        </div>
-                    </div>
                     <div id="editor-section-skills" className="mb-2">
-                        <div className="flex justify-between w-full">
-                            <h5 className="h5 text-ts">{t('editor.sections.skills')}</h5>
+                        <div className="flex justify-between items-center w-full">
+                            <h5 className="h5 text-ts mb-1">{t('editor.sections.skills')}</h5>
                             <div className="flex">
                                 <ButtonIcon icon={<FaPlusCircle />} className="text-xs text-emphasis" />
                                 <ButtonIcon icon={<FaMinusCircle />} className="text-xs text-emphasis" />
@@ -69,28 +90,12 @@ export function EditorPage() {
                         </div>
                         <hr className="border-b border-border my-1" />
                     </div>
-                    <div id="editor-section-repositories" className="mb-2">
-                        <h5 className="h5 text-ts">{t('editor.sections.repositories')}</h5>
-                        <div className="flex flex-col gap-1 sm:gap-2 w-full">
-                            <InputLabelIcon type="text" placeholder={t('editor.fields.repositoryLink')} className="w-full text-sm" />
-                        </div>
-                    </div>
-                    <div id="editor-section-portfolio" className="mb-2">
-                        <h5 className="h5 text-ts">{t('editor.sections.portfolio')}</h5>
-                        <div className="flex flex-col gap-1 sm:gap-2 w-full">
-                            <InputLabelIcon type="text" placeholder={t('editor.fields.portfolioLink')} className="w-full text-sm" />
-                        </div>
-                    </div>
-                    <div id="editor-section-extra-info">
-                        <h5 className="h5 text-ts">{t('editor.sections.extraInfo')}</h5>
-                        <div className="flex flex-col gap-1 sm:gap-2 w-full">
-                            <textarea className="w-full rounded-lg border border-border bg-surface px-3 py-1 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors text-tp placeholder:text-ts/50 text-sm" placeholder={t('editor.fields.extraInfo')}></textarea>
-                        </div>
-                    </div>
                 </div>
-                <div>
-                    <p>visor</p>
-                </div>
+            </div>
+            <div className="fixed right-4 top-1/2 -translate-y-1/2 z-50">
+                <button className="flex items-center justify-center w-14 h-14 rounded-full bg-surface text-primary shadow-lg border-2 border-primary hover:bg-surface-hover hover:scale-105 transition-all cursor-pointer">
+                    <VscPreview className="text-3xl" />
+                </button>
             </div>
         </div>
     )
