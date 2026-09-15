@@ -1,24 +1,21 @@
-import { useState } from 'react'
 import { useCvStore } from '@stores/cvStore'
-import { TemplateBasic, TemplateSidebar, TEMPLATES, type TemplateId } from '@components/templates'
 import type { CvData } from '@/types/cv.types'
-import { IoCloseOutline } from 'react-icons/io5'
-import { MdOutlineCompare } from 'react-icons/md'
+import { TemplateBasic, TemplateSidebar, TEMPLATES, TEMPLATE_LABELS, type TemplateId } from '@components/templates'
+import { FONTS } from '@/types/font.types'
+import { COLORS } from '@/types/color.types'
+import { IoCloseCircleSharp } from 'react-icons/io5'
+import { ButtonIcon } from '@/components/ui/ButtonIcon'
+import { SelectBase } from '@/components/ui/SelectBase'
+import type { ComponentType } from 'react'
 
-const TEMPLATE_LABELS: Record<TemplateId, string> = {
-    'template-basic': 'Clásico',
-    'template-sidebar': 'Sidebar Lateral',
-}
+// Constantes fuera del componente: se calculan una sola vez
+const templateIds = Object.keys(TEMPLATES) as TemplateId[]
+const templateOptions = templateIds.map((id) => ({ value: id, label: TEMPLATE_LABELS[id] }))
 
-function renderTemplate(templateId: TemplateId, data: CvData) {
-    switch (templateId) {
-        case 'template-basic':
-            return <TemplateBasic data={data} />
-        case 'template-sidebar':
-            return <TemplateSidebar data={data} />
-        default:
-            return <TemplateBasic data={data} />
-    }
+// Mapa de componentes: más extensible que un switch
+const TEMPLATE_MAP: Record<TemplateId, ComponentType<{ data: CvData }>> = {
+    'template-basic': TemplateBasic,
+    'template-sidebar': TemplateSidebar,
 }
 
 interface TemplatePreviewModalProps {
@@ -27,92 +24,53 @@ interface TemplatePreviewModalProps {
 
 export function TemplatePreviewModal({ onClose }: TemplatePreviewModalProps) {
     const { cv, updateField } = useCvStore()
-    const [selected, setSelected] = useState<TemplateId>(cv.templateId)
 
-    const templateIds = Object.keys(TEMPLATES) as TemplateId[]
-
-    const handleApply = () => {
-        updateField('templateId', selected)
-        onClose()
-    }
+    const TemplateComponent = TEMPLATE_MAP[cv.templateId] ?? TemplateBasic
 
     return (
-        <div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm"
-            onClick={(e) => e.target === e.currentTarget && onClose()}
-        >
-            <div className="bg-surface border border-border rounded-xl shadow-2xl flex flex-col w-[1000px] max-w-[95vw] max-h-[92vh] overflow-hidden">
-                {/* Header */}
-                <div className="flex items-center justify-between px-5 py-3 border-b border-border shrink-0">
-                    <div className="flex items-center gap-2">
-                        <MdOutlineCompare className="text-primary text-xl" />
-                        <h2 className="text-base font-semibold text-tp">Vista previa de Templates</h2>
-                    </div>
-                    <button
-                        id="template-preview-close"
-                        onClick={onClose}
-                        className="p-1 rounded-lg hover:bg-border/50 text-ts hover:text-tp transition-colors"
-                    >
-                        <IoCloseOutline className="text-xl" />
-                    </button>
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
+            <div className="bg-surface border border-border text-t-primary rounded-sm flex flex-col w-[1000px] max-w-[95vw] max-h-[92vh] overflow-hidden px-3 pt-0.5 pb-2">
+                <div className="flex items-center mb-2">
+                    <h5 className="h5 text-primary">Vista previa</h5>
                 </div>
-
-                {/* Selector de template */}
-                <div className="flex gap-2 px-5 py-3 border-b border-border shrink-0 overflow-x-auto">
-                    {templateIds.map((id) => (
-                        <button
-                            key={id}
-                            id={`template-option-${id}`}
-                            onClick={() => setSelected(id)}
-                            className={`
-                                px-4 py-2 rounded-lg text-sm font-medium border-2 transition-all shrink-0
-                                ${selected === id
-                                    ? 'border-primary bg-primary/10 text-primary'
-                                    : 'border-border bg-surface hover:border-primary/50 text-ts hover:text-tp'
-                                }
-                            `}
-                        >
-                            {TEMPLATE_LABELS[id]}
-                            {cv.templateId === id && (
-                                <span className="ml-2 text-xs bg-primary/20 text-primary px-1.5 py-0.5 rounded-full">
-                                    Actual
-                                </span>
-                            )}
-                        </button>
-                    ))}
+                <div className="flex justify-end gap-2 mb-4">
+                    <SelectBase
+                        options={FONTS}
+                        label="Fuentes"
+                        intOption="Selecciona una fuente"
+                        value={cv.font}
+                        className="w-auto"
+                        onChange={(e) => updateField('font', e.target.value)}
+                    />
+                    <SelectBase
+                        colorFlags={true}
+                        options={COLORS}
+                        label="Colores"
+                        intOption="Selecciona un color"
+                        value={cv.bgColor}
+                        className="w-auto"
+                        onChange={(e) => updateField('bgColor', e.target.value)}
+                    />
+                    <SelectBase
+                        options={templateOptions}
+                        label="Plantilla"
+                        value={cv.templateId}
+                        className="w-auto"
+                        onChange={(e) => updateField('templateId', e.target.value as TemplateId)}
+                    />
                 </div>
-
-                {/* Preview del template — escalado para caber en el modal */}
-                <div className="flex-1 overflow-auto flex items-start justify-center p-6 bg-black/20">
-                    <div
-                        style={{
-                            transform: 'scale(0.72)',
-                            transformOrigin: 'top center',
-                            // Mantiene el espacio visual del div escalado
-                            marginBottom: '-300px',
-                        }}
-                    >
-                        {renderTemplate(selected, cv)}
+                <div className="flex-1 overflow-auto flex items-start justify-center p-6 bg-black/20 mb-3">
+                    <div style={{ transformOrigin: 'top center', marginBottom: '-300px' }}>
+                        <TemplateComponent data={cv} />
                     </div>
                 </div>
-
-                {/* Footer */}
-                <div className="flex items-center justify-end gap-2 px-5 py-3 border-t border-border shrink-0">
-                    <button
-                        id="template-preview-cancel"
+                <div className="flex justify-end gap-2 shrink-0">
+                    <ButtonIcon
+                        label="Cerrar"
+                        icon={<IoCloseCircleSharp />}
                         onClick={onClose}
-                        className="px-4 py-1.5 rounded-lg text-sm text-ts hover:text-tp hover:bg-border/50 transition-colors"
-                    >
-                        Cancelar
-                    </button>
-                    <button
-                        id="template-preview-apply"
-                        onClick={handleApply}
-                        disabled={selected === cv.templateId}
-                        className="px-4 py-1.5 rounded-lg text-sm font-medium bg-primary text-white hover:bg-primary/90 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
-                    >
-                        Aplicar template
-                    </button>
+                        className="w-auto bg-border text-xs text-tp hover:bg-border/80 hover:text-ts"
+                    />
                 </div>
             </div>
         </div>
