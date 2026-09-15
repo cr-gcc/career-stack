@@ -1,80 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
 @import "tailwindcss";
+@source "../src/types/color.types.ts";
 
 :root {
-  font-family: "Manrope", sans-serif;
+    /* Base */
+    --color-background: #D6DBE3;
+    --color-surface: #E4E8ED;
+    --color-surface-secondary: #EDF0F3;
 
-  /* Base */
-  --color-background: #D6DBE3;
-  --color-surface: #E4E8ED;
-  --color-surface-secondary: #EDF0F3;
+    /* Contraste fuerte */
+    --color-emphasis: #172033;
 
-  /* Contraste fuerte */
-  --color-emphasis: #172033;
+    /* Texto */
+    --color-tp: #1E293B;
+    --color-ts: #667085;
 
-  /* Texto */
-  --color-tp: #1E293B;
-  --color-ts: #667085;
+    /* Bordes */
+    --color-border: #B7C0CC;
 
-  /* Bordes */
-  --color-border: #B7C0CC;
-
-  /* Brand */
-  --color-primary: #B4232D;
-  --color-primary-hover: #921C25;
-  --color-primary-soft: #E8C7CA;
+    /* Brand */
+    --color-primary: #B4232D;
+    --color-primary-hover: #921C25;
+    --color-primary-soft: #E8C7CA;
 }
 
 @theme {
-  --color-background: var(--color-background);
-  --color-surface: var(--color-surface);
-  --color-surface-secondary: var(--color-surface-secondary);
+    --font-sans: "Manrope", sans-serif;
+    --font-roboto-condensed: "Roboto Condensed", sans-serif;
+    --font-inter-tight: "Inter Tight", sans-serif;
+    --font-dm-sans: "DM Sans", sans-serif;
 
-  --color-emphasis: var(--color-emphasis);
+    --color-background: var(--color-background);
+    --color-surface: var(--color-surface);
+    --color-surface-secondary: var(--color-surface-secondary);
 
-  --color-tp: var(--color-tp);
-  --color-ts: var(--color-ts);
+    --color-emphasis: var(--color-emphasis);
 
-  --color-border: var(--color-border);
+    --color-tp: var(--color-tp);
+    --color-ts: var(--color-ts);
 
-  --color-primary: var(--color-primary);
-  --color-primary-hover: var(--color-primary-hover);
-  --color-primary-soft: var(--color-primary-soft);
+    --color-border: var(--color-border);
+
+    --color-primary: var(--color-primary);
+    --color-primary-hover: var(--color-primary-hover);
+    --color-primary-soft: var(--color-primary-soft);
 }
 
 [data-theme="dark"] {
-  --color-background: #0B111B;
-  --color-surface: #111827;
-  --color-surface-secondary: #1B2432;
+    --color-background: #0B111B;
+    --color-surface: #111827;
+    --color-surface-secondary: #1B2432;
 
-  --color-emphasis: #F1F5F9;
+    --color-emphasis: #F1F5F9;
 
-  --color-tp: #E5E7EB;
-  --color-ts: #94A3B8;
+    --color-tp: #E5E7EB;
+    --color-ts: #94A3B8;
 
-  --color-border: #334155;
+    --color-border: #334155;
 
-  --color-primary: #D13A43;
-  --color-primary-hover: #B4232D;
-  --color-primary-soft: #4A171C;
+    --color-primary: #D13A43;
+    --color-primary-hover: #B4232D;
+    --color-primary-soft: #4A171C;
 }
 
 .h1 {
-  @apply text-5xl font-semibold;
+    @apply text-5xl font-semibold;
 }
 
 .h2 {
-  @apply text-4xl font-semibold;
+    @apply text-4xl font-semibold;
 }
 
 .h3 {
-  @apply text-3xl font-semibold;
+    @apply text-3xl font-semibold;
 }
 
 .h4 {
-  @apply text-2xl font-semibold;
+    @apply text-2xl font-semibold;
 }
 
 .h5 {
-  @apply text-xl font-semibold;
+    @apply text-xl font-semibold;
 }
