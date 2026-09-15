@@ -25,12 +25,10 @@ export function ModalBase({ size, title, modalContent, optionButtons }: ModalBas
         <dialog
             ref={dialogRef}
             closedby="any"
-            aria-labelledby="modalTitle"
-            aria-describedby="modalDescription"
             className={`backdrop:bg-black/60 bg-transparent border-0 outline-none p-0 m-auto transition-all duration-300 sm:h-full md:h-auto ${size}`}
         >
-            <div className="bg-surface border border-border text-t-primary px-3 py-1.5 rounded-sm flex flex-col">
-                <div id="modal-header" className="flex items-center justify-between mb-2">
+            <div className="bg-surface border border-border text-t-primary px-3 pt-0.5 pb-2 rounded-sm flex flex-col">
+                <div id="modal-header" className="flex items-center mb-2">
                     <h5 id="modalTitle" className="h5 text-primary">{title}</h5>
                 </div>
                 <div id="modal-content" className="mb-3">
