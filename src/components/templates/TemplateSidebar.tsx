@@ -23,6 +23,13 @@ export function TemplateSidebar({ data }: TemplateSidebarProps) {
 
     const fulltimeExperiences = workExperiences.filter((e) => e.type === 'fulltime')
     const freelanceExperiences = workExperiences.filter((e) => e.type === 'freelance')
+    
+    // Limpia 'bg-' si ya viene incluido (ej. del storage antiguo)
+    const rawColor = bgColor?.replace(/^bg-/, '') || ''
+    
+    // Fallback a black si está vacío o si es white
+    const headerBgColor = (!rawColor || rawColor === 'white') ? 'bg-black' : `bg-${rawColor}`
+    const borderColor = (!rawColor || rawColor === 'white') ? 'border-black' : `border-${rawColor}`
 
     return (
         <div
@@ -30,7 +37,7 @@ export function TemplateSidebar({ data }: TemplateSidebarProps) {
             style={{ width: '794px', height: '1123px' }}
         >
             {/* Sidebar izquierdo */}
-            <div className={`${bgColor} text-white flex flex-col`} style={{ width: '220px', minWidth: '220px' }}>
+            <div className={`${headerBgColor} text-white flex flex-col`} style={{ width: '220px', minWidth: '220px' }}>
                 {/* Avatar placeholder */}
                 <div className="flex flex-col items-center px-4 pt-8 pb-4">
                     <div className="w-24 h-24 rounded-full bg-white/20 border-4 border-white/40 flex items-center justify-center mb-3">
@@ -136,7 +143,7 @@ export function TemplateSidebar({ data }: TemplateSidebarProps) {
                 <div className="flex-1 px-6 py-4 space-y-4 overflow-hidden">
                     {/* Experiencia laboral */}
                     <section>
-                        <h2 className="text-sm font-bold uppercase tracking-widest border-b-2 border-gray-900 pb-0.5 mb-2">
+                        <h2 className={` ${borderColor} text-sm font-bold uppercase tracking-widest border-b-2  pb-0.5 mb-2`}>
                             Experiencia Laboral
                         </h2>
 
@@ -147,8 +154,8 @@ export function TemplateSidebar({ data }: TemplateSidebarProps) {
                                     {fulltimeExperiences.map((exp) => (
                                         <li key={exp.id} className="flex gap-3">
                                             <div className="flex flex-col items-center pt-1">
-                                                <div className="w-2 h-2 rounded-full bg-gray-800 shrink-0" />
-                                                <div className="w-px flex-1 bg-gray-300 mt-1" />
+                                                <div className={`w-2 h-2 rounded-full ${headerBgColor} shrink-0`} />
+                                                <div className={`w-px flex-1 ${headerBgColor} mt-1`} />
                                             </div>
                                             <div className="pb-2">
                                                 <p className="text-xs font-bold leading-tight">
@@ -173,8 +180,8 @@ export function TemplateSidebar({ data }: TemplateSidebarProps) {
                                     {freelanceExperiences.map((exp) => (
                                         <li key={exp.id} className="flex gap-3">
                                             <div className="flex flex-col items-center pt-1">
-                                                <div className="w-2 h-2 rounded-full bg-gray-600 shrink-0" />
-                                                <div className="w-px flex-1 bg-gray-300 mt-1" />
+                                                <div className={`w-2 h-2 rounded-full ${headerBgColor} shrink-0`} />
+                                                <div className={`w-px flex-1 ${headerBgColor} mt-1`} />
                                             </div>
                                             <div className="pb-2">
                                                 <p className="text-xs font-bold leading-tight">
@@ -195,7 +202,7 @@ export function TemplateSidebar({ data }: TemplateSidebarProps) {
 
                     {/* Formación académica */}
                     <section>
-                        <h2 className="text-sm font-bold uppercase tracking-widest border-b-2 border-gray-900 pb-0.5 mb-2">
+                        <h2 className={` ${borderColor} text-sm font-bold uppercase tracking-widest border-b-2 pb-0.5 mb-2`}>
                             Formación Académica
                         </h2>
                         <p
@@ -207,7 +214,7 @@ export function TemplateSidebar({ data }: TemplateSidebarProps) {
                     {/* Info adicional */}
                     {extraInfo && (
                         <section>
-                            <h2 className="text-sm font-bold uppercase tracking-widest border-b-2 border-gray-900 pb-0.5 mb-2">
+                            <h2 className={` ${borderColor} text-sm font-bold uppercase tracking-widest border-b-2 pb-0.5 mb-2`}>
                                 Información Adicional
                             </h2>
                             <p

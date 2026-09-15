@@ -23,11 +23,18 @@ export function TemplateBasic({ data }: TemplateBasicProps) {
 
     const fulltimeExperiences = workExperiences.filter((e) => e.type === 'fulltime')
     const freelanceExperiences = workExperiences.filter((e) => e.type === 'freelance')
+    
+    // Limpia 'bg-' si ya viene incluido (ej. del storage antiguo)
+    const rawColor = bgColor?.replace(/^bg-/, '') || ''
+    
+    // Fallback a black si está vacío o si es white
+    const headerBgColor = (!rawColor || rawColor === 'white') ? 'bg-black' : `bg-${rawColor}`
+    const borderColor = (!rawColor || rawColor === 'white') ? 'border-black' : `border-${rawColor}`
 
     return (
         <div className={`${font} bg-white text-gray-900`} style={{ width: '794px', height: '1123px' }}>
             {/* Header */}
-            <div className={`${bgColor} text-white px-6 pt-6 pb-2 items-center`}>
+            <div className={`${headerBgColor} text-white px-6 pt-6 pb-2 items-center`}>
                 <div className="grid grid-cols-3">
                     <div className="flex items-end col-span-2">
                         <h1 className="text-3xl uppercase">{generalInfo.name || 'Tu Nombre'}</h1>
@@ -55,7 +62,7 @@ export function TemplateBasic({ data }: TemplateBasicProps) {
                     <div className="w-full p-4">
                         {/* Perfil profesional */}
                         <section className="mb-2">
-                            <h2 className="mb-2 text-lg font-bold border-b-2 border-gray-900 uppercase tracking-widest">
+                            <h2 className={`${borderColor} mb-2 text-lg font-bold border-b-2 uppercase tracking-widest`}>
                                 Perfil Profesional
                             </h2>
                             <p className="text-sm leading-tight">{summary}</p>
@@ -63,7 +70,7 @@ export function TemplateBasic({ data }: TemplateBasicProps) {
 
                         {/* Experiencia laboral */}
                         <section>
-                            <h2 className="mb-2 text-lg font-bold border-b-2 border-gray-900 uppercase tracking-widest">
+                            <h2 className={`${borderColor} mb-2 text-lg font-bold border-b-2 uppercase tracking-widest`}>
                                 Experiencia Laboral
                             </h2>
 
@@ -123,7 +130,7 @@ export function TemplateBasic({ data }: TemplateBasicProps) {
                     <div className="w-full p-4">
                         {/* Formación académica */}
                         <section className="mb-2">
-                            <h2 className="mb-2 text-lg font-bold border-b-2 border-gray-900 uppercase tracking-widest">
+                            <h2 className={`${borderColor} mb-2 text-lg font-bold border-b-2 uppercase tracking-widest`}>
                                 Formación Académica
                             </h2>
                             <p
@@ -134,7 +141,7 @@ export function TemplateBasic({ data }: TemplateBasicProps) {
 
                         {/* Habilidades */}
                         <section className="mb-2">
-                            <h2 className="mb-2 text-lg font-bold border-b-2 border-gray-900 uppercase tracking-widest">
+                            <h2 className={`${borderColor} mb-2 text-lg font-bold border-b-2 uppercase tracking-widest`}>
                                 Habilidades
                             </h2>
                             <ul className="list-disc list-inside pl-0 marker:text-gray-700">
@@ -153,7 +160,7 @@ export function TemplateBasic({ data }: TemplateBasicProps) {
                         {/* Repositorio */}
                         {repositories && (
                             <section className="mb-2">
-                                <h2 className="mb-2 text-lg font-bold border-b-2 border-gray-900 uppercase tracking-widest">
+                                <h2 className={`${borderColor} mb-2 text-lg font-bold border-b-2 uppercase tracking-widest`}>
                                     Repositorio
                                 </h2>
                                 <p className="text-sm leading-tight">{repositories}</p>
@@ -163,7 +170,7 @@ export function TemplateBasic({ data }: TemplateBasicProps) {
                         {/* Certificados */}
                         {certifications && (
                             <section className="mb-2">
-                                <h2 className="mb-2 text-lg font-bold border-b-2 border-gray-900 uppercase tracking-widest">
+                                <h2 className={`${borderColor} mb-2 text-lg font-bold border-b-2 uppercase tracking-widest`}>
                                     Certificados
                                 </h2>
                                 <p className="text-sm leading-tight">{certifications}</p>
@@ -173,7 +180,7 @@ export function TemplateBasic({ data }: TemplateBasicProps) {
                         {/* Información adicional */}
                         {extraInfo && (
                             <section className="mb-2">
-                                <h2 className="mb-2 text-lg font-bold border-b-2 border-gray-900 uppercase tracking-widest">
+                                <h2 className={`${borderColor} mb-2 text-lg font-bold border-b-2 uppercase tracking-widest`}>
                                     Información Adicional
                                 </h2>
                                 <p
