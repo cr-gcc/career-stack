@@ -32,6 +32,7 @@ export const es = {
     sidebar: {
         home: 'Inicio',
         myCVs: 'Mis CVs',
+        templates: 'Plantillas',
         editor: 'Editor',
         jobOffers: 'Empleos',
     },
@@ -49,6 +50,11 @@ export const es = {
     cvs: {
         title: 'Mis CVs',
         subtitle: 'Historico de CVs creados disponibles.',
+    },
+
+    templates: {
+        title: 'Plantillas',
+        subtitle: 'Selecciona la plantilla de CV que mejor se adapte a tu perfil.',
     },
 
     editor: {
