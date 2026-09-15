@@ -1,11 +1,14 @@
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { InputLabelIcon } from "@components/ui/InputLabelIcon";
 import { ButtonIcon } from "@components/ui/ButtonIcon";
 import { FaPlusCircle, FaMinusCircle } from "react-icons/fa";
 import { VscPreview } from "react-icons/vsc";
+import { TemplatePreviewModal } from "@domains/admin/components/TemplatePreviewModal";
 
 export function EditorPage() {
     const { t } = useTranslation();
+    const [showPreview, setShowPreview] = useState(false);
 
     return (
         <div className="flex flex-col gap-2 sm:gap-4 w-full max-w-7xl mx-auto mb-8">
@@ -93,10 +96,17 @@ export function EditorPage() {
                 </div>
             </div>
             <div className="fixed right-4 top-1/2 -translate-y-1/2 z-50">
-                <button className="flex items-center justify-center w-14 h-14 rounded-full bg-surface text-primary shadow-lg border-2 border-primary hover:bg-surface-hover hover:scale-105 transition-all cursor-pointer">
+                <button
+                    id="editor-preview-btn"
+                    onClick={() => setShowPreview(true)}
+                    className="flex items-center justify-center w-14 h-14 rounded-full bg-surface text-primary shadow-lg border-2 border-primary hover:bg-surface-hover hover:scale-105 transition-all cursor-pointer"
+                >
                     <VscPreview className="text-3xl" />
                 </button>
             </div>
+            {showPreview && (
+                <TemplatePreviewModal onClose={() => setShowPreview(false)} />
+            )}
         </div>
     )
 }
