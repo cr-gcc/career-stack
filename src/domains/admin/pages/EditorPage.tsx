@@ -105,7 +105,7 @@ export function EditorPage() {
                 </button>
             </div>
             {showPreview && (
-                <TemplatePreviewModal onClose={() => setShowPreview(false)} />
+                <TemplatePreviewModal modalClose={() => setShowPreview(false)} />
             )}
         </div>
     )
