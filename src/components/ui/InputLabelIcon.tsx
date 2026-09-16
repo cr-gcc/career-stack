@@ -1,19 +1,20 @@
-import type { InputHTMLAttributes, ReactNode } from 'react';
+import type { InputHTMLAttributes } from 'react';
 
-interface InputLabelIconProps extends InputHTMLAttributes<HTMLInputElement> {
+export interface InputLabelIconProps extends InputHTMLAttributes<HTMLInputElement> {
+    id: string;
     label?: string;
-    icon?: ReactNode;
-    type?: string;
+    icon?: React.ReactNode;
+    type?: string
+    className?: string;
 }
 
-export function InputLabelIcon({ label, icon, id, type = "text", className = "", ...props }: InputLabelIconProps) {
+export function InputLabelIcon({ id, label, icon, type, className, ...props
+}: InputLabelIconProps) {
     return (
         <div className="flex flex-col gap-1.5 w-full">
-            {label && (
-                <label htmlFor={id} className="text-sm font-medium text-ts">
-                    {label}
-                </label>
-            )}
+            <label htmlFor={id} className="text-sm font-medium text-ts">
+                {label}
+            </label>
             <div className="flex items-center gap-2 rounded-lg border border-border bg-surface px-3 py-1 focus-within:border-primary focus-within:ring-1 focus-within:ring-primary transition-colors">
                 {icon && <span className="text-ts flex-shrink-0">{icon}</span>}
                 <input

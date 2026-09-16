@@ -15,6 +15,7 @@ export function ButtonIcon({
 }: ButtonIconProps) {
     return (
         <button
+            type="button"
             onClick={onClick}
             className={`cursor-pointer flex items-center justify-center gap-1 px-2 py-1 rounded-md transition-colors ${className}`}
         >
