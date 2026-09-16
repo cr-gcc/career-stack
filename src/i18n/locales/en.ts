@@ -64,6 +64,8 @@ export const en = {
             generalInfo: 'General information',
             profesionalProfile: 'Professional profile',
             workExperiences: 'Work experiences',
+            fullTime: 'Full-time',
+            partTime: 'Consultant / Freelance',
             education: 'Education',
             skills: 'Skills',
             repositories: 'Repositories',

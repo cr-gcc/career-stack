@@ -64,6 +64,8 @@ export const es = {
             generalInfo: 'Información general',
             profesionalProfile: 'Perfil profesional',
             workExperiences: 'Experiencia laboral',
+            fullTime: 'Tiempo completo',
+            partTime: 'Consultor / Freelance',
             education: 'Formación académica',
             skills: 'Habilidades',
             repositories: 'Repositorios',
@@ -84,7 +86,6 @@ export const es = {
             education: 'Educación',
             area: 'Área. Eje: Frontend',
             tecnologies: 'Tecnologias. Eje: React, Angular, Vue',
-
             repositoryLink: 'Enlace al repositorio',
             portfolioLink: 'Enlace al portafolio',
             extraInfo: 'Información adicional',
