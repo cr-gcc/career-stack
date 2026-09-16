@@ -23,20 +23,20 @@ const initialCv: CvData = {
     education: 'I have a PhD in Science, and I have been a professor at the University of Life for 10 years. I have also published 10 books on the subject.',
     workExperiences: [
         {
-            id: 'wf-1',
-            company: 'Citadel',
+            id: 1,
+            name: 'Citadel',
             dateRange: '2020 - Present',
             role: 'Scientific Professional',
             description: 'I am a 70-year-old scientist, and I have been doing this for 10 years, I am the best in what I do and I have the knowledge to prove it.',
-            type: 'fulltime',
+            type: 'full-time',
         },
         {
-            id: 'wc-1',
-            company: 'Garage',
+            id: 2,
+            name: 'Garage',
             dateRange: '2015 - 2020',
             role: 'Scientific Assistant',
             description: 'I was a scientific assistant to Rick Sanchez, and I helped him with his experiments.',
-            type: 'freelance',
+            type: 'part-time',
         },
     ],
     skills: [

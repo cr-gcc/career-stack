@@ -7,12 +7,12 @@ export interface CvGeneralInfo {
 }
 
 export interface CvWorkExperience {
-    id: string;
-    company: string;
+    id: number;
+    name: string;
     dateRange: string;
     role: string;
     description: string;
-    type: 'fulltime' | 'freelance';
+    type: 'full-time' | 'part-time';
 }
 
 export interface CvSkill {
