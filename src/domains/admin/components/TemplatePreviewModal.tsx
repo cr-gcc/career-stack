@@ -8,7 +8,7 @@ import { ButtonIcon } from '@/components/ui/ButtonIcon'
 import { SelectBase } from '@/components/ui/SelectBase'
 
 interface TemplatePreviewModalProps {
-    modalClose: () => void
+    modalClose: (value: boolean) => void
 }
 
 export function TemplatePreviewModal({ modalClose }: TemplatePreviewModalProps) {
