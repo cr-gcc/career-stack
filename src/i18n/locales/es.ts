@@ -3,6 +3,7 @@ export const es = {
         save: 'Guardar',
         cancel: 'Cancelar',
         continue: 'Continuar',
+        close: 'Cerrar',
     },
 
     auth: {
@@ -87,6 +88,16 @@ export const es = {
             repositoryLink: 'Enlace al repositorio',
             portfolioLink: 'Enlace al portafolio',
             extraInfo: 'Información adicional',
+        },
+        modal: {
+            title: 'Vista previa',
+            fonts: 'Fuentes',
+            colors: 'Colores',
+            template: 'Plantilla',
+            intOptionFonts: 'Selecciona una fuente',
+            intOptionColors: 'Selecciona un color',
+            intOptionTemplate: 'Selecciona una plantilla',
+            defaultMessage: 'Por favor selecciona una plantilla para inciar con la creación/edición de tu CV.',
         }
     },
 

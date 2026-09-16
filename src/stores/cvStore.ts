@@ -9,9 +9,9 @@ interface CvState {
 }
 
 const initialCv: CvData = {
-    templateId: 'template-basic',
-    font: 'font-sans',
-    bgColor: 'black',
+    templateId: '',
+    font: '',
+    bgColor: '',
     generalInfo: {
         name: 'Rick Sanchez',
         role: 'Scientific Professional',

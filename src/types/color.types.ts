@@ -45,8 +45,6 @@ export const COLORS: { value: ColorId; label: string }[] = [
     { value: 'stone-950', label: 'Stone' }
 ]
 
-// Safelist de clases completas para que Tailwind v4 las incluya en el build.
-// index.css apunta a este archivo con @source "../types/color.types.ts"
 export const safelist = [
     "bg-red-950", "text-red-950", "border-red-950", "text-red-900", "marker:text-red-900",
     "bg-orange-950", "text-orange-950", "border-orange-950", "text-orange-900", "marker:text-orange-900",

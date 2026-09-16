@@ -1,5 +1,5 @@
 export type FontId =
-    | 'font-sans'
+    | 'font-manrope'
     | 'font-nunito'
     | 'font-inter-tight'
     | 'font-dm-sans'
@@ -7,7 +7,7 @@ export type FontId =
     | 'font-plus-jakarta-sans'
 
 export const FONTS: { value: FontId; label: string }[] = [
-    { value: 'font-sans',               label: 'Manrope' },
+    { value: 'font-manrope',            label: 'Manrope' },
     { value: 'font-nunito',             label: 'Nunito' },
     { value: 'font-inter-tight',        label: 'Inter Tight' },
     { value: 'font-dm-sans',            label: 'DM Sans' },

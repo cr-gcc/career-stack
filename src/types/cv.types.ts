@@ -1,5 +1,3 @@
-import type { TemplateId } from '@/components/templates'
-
 export interface CvGeneralInfo {
     name: string;
     role: string;
@@ -25,7 +23,7 @@ export interface CvSkill {
 }
 
 export interface CvData {
-    templateId: TemplateId;
+    templateId: "";
     font: string;
     bgColor: string;
     generalInfo: CvGeneralInfo;

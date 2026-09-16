@@ -9,6 +9,7 @@
 @source "../src/types/color.types.ts";
 
 :root {
+    font-family: "Manrope", sans-serif;
     /* Base */
     --color-background: #D6DBE3;
     --color-surface: #E4E8ED;
@@ -31,10 +32,12 @@
 }
 
 @theme {
-    --font-sans: "Manrope", sans-serif;
+    --font-manrope: "Manrope", sans-serif;
+    --font-nunito: "Nunito", sans-serif;
     --font-roboto-condensed: "Roboto Condensed", sans-serif;
     --font-inter-tight: "Inter Tight", sans-serif;
     --font-dm-sans: "DM Sans", sans-serif;
+    --font-plus-jakarta-sans: "Plus Jakarta Sans", sans-serif;
 
     --color-background: var(--color-background);
     --color-surface: var(--color-surface);
