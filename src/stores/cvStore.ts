@@ -41,7 +41,7 @@ const initialCv: CvData = {
     ],
     skills: [
         {
-            id: 'sk-1',
+            id: 1,
             area: 'Science',
             technologies: 'Physics, Chemistry, Biology',
         },

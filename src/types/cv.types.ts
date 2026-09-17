@@ -16,9 +16,8 @@ export interface CvWorkExperience {
 }
 
 export interface CvSkill {
-    id: string;
+    id: number;
     area: string;
-    /** Puede contener HTML simple (<br />) para saltos de linea */
     technologies: string;
 }
 
