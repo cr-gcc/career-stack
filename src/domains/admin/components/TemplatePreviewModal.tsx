@@ -4,17 +4,28 @@ import { TEMPLATE_OPTIONS, getTemplateComponent } from '@/components/templates/T
 import { FONTS } from '@/types/font.types'
 import { COLORS } from '@/types/color.types'
 import { IoCloseCircleSharp } from 'react-icons/io5'
+import { HiDocumentDownload } from "react-icons/hi";
+import { IoMdSave } from "react-icons/io";
 import { ButtonIcon } from '@/components/ui/ButtonIcon'
 import { SelectBase } from '@/components/ui/SelectBase'
 
 interface TemplatePreviewModalProps {
-    modalClose: (value: boolean) => void
+    modalOpen: (value: boolean) => void
 }
 
-export function TemplatePreviewModal({ modalClose }: TemplatePreviewModalProps) {
+export function TemplatePreviewModal({ modalOpen }: TemplatePreviewModalProps) {
+    const { t } = useTranslation()
     const { cv, updateField } = useCvStore()
     const TemplateComponent = getTemplateComponent(cv.templateId)
-    const { t } = useTranslation()
+
+    const saveCV = () => {
+        alert("En construcción");
+    }
+
+    const downloadCV = () => {
+        alert("En construcción");
+    }
+
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
             <div className="bg-surface border border-border text-t-primary rounded-sm flex flex-col w-[1000px] max-w-[95vw] max-h-[92vh] overflow-hidden px-3 pt-0.5 pb-2">
@@ -55,9 +66,19 @@ export function TemplatePreviewModal({ modalClose }: TemplatePreviewModalProps) 
                 </div>
                 <div className="flex justify-end gap-2 shrink-0">
                     <ButtonIcon
+                        label={t('common.download')}
+                        icon={<HiDocumentDownload />}
+                        onClick={() => downloadCV()}
+                        className="w-auto bg-border text-xs text-tp hover:bg-border/80 hover:text-ts" />
+                    <ButtonIcon
+                        label={t('common.save')}
+                        icon={<IoMdSave />}
+                        onClick={() => saveCV()}
+                        className="w-auto bg-border text-xs text-tp hover:bg-border/80 hover:text-ts" />
+                    <ButtonIcon
                         label={t('common.close')}
                         icon={<IoCloseCircleSharp />}
-                        onClick={modalClose}
+                        onClick={() => modalOpen(false)}
                         className="w-auto bg-border text-xs text-tp hover:bg-border/80 hover:text-ts"
                     />
                 </div>

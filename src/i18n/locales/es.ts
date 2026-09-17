@@ -4,6 +4,7 @@ export const es = {
         cancel: 'Cancelar',
         continue: 'Continuar',
         close: 'Cerrar',
+        download: 'Descargar',
     },
 
     auth: {

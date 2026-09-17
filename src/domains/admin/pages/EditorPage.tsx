@@ -89,7 +89,7 @@ export function EditorPage() {
             </div>
             {
                 showPreview && (
-                    <TemplatePreviewModal modalClose={() => setShowPreview(false)} />
+                    <TemplatePreviewModal modalOpen={() => setShowPreview(false)} />
                 )
             }
         </>
