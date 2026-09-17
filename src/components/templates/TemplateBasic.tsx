@@ -20,20 +20,14 @@ export function TemplateBasic({ data }: TemplateBasicProps) {
         certifications,
         extraInfo
     } = data
-
-    const fulltimeExperiences = workExperiences.filter((e) => e.type === 'fulltime')
-    const freelanceExperiences = workExperiences.filter((e) => e.type === 'freelance')
-    
-    // Limpia 'bg-' si ya viene incluido (ej. del storage antiguo)
+    const fulltimeExperiences = workExperiences.filter((e) => e.type === 'full-time')
+    const freelanceExperiences = workExperiences.filter((e) => e.type === 'part-time')
     const rawColor = bgColor?.replace(/^bg-/, '') || ''
-    
-    // Fallback a black si está vacío o si es white
     const headerBgColor = (!rawColor || rawColor === 'white') ? 'bg-black' : `bg-${rawColor}`
     const borderColor = (!rawColor || rawColor === 'white') ? 'border-black' : `border-${rawColor}`
 
     return (
         <div className={`${font} bg-white text-gray-900`} style={{ width: '794px', height: '1123px' }}>
-            {/* Header */}
             <div className={`${headerBgColor} text-white px-6 pt-6 pb-2 items-center`}>
                 <div className="grid grid-cols-3">
                     <div className="flex items-end col-span-2">
@@ -54,27 +48,19 @@ export function TemplateBasic({ data }: TemplateBasicProps) {
                     <p className="py-1 text-lg tracking-widest">{generalInfo.role || 'Tu Rol Profesional'}</p>
                 </div>
             </div>
-
-            {/* Body */}
             <div className="grid grid-cols-5 text-justify">
-                {/* Left Column - 3/5 */}
                 <div className="col-span-3">
                     <div className="w-full p-4">
-                        {/* Perfil profesional */}
                         <section className="mb-2">
                             <h2 className={`${borderColor} mb-2 text-lg font-bold border-b-2 uppercase tracking-widest`}>
                                 Perfil Profesional
                             </h2>
                             <p className="text-sm leading-tight">{summary}</p>
                         </section>
-
-                        {/* Experiencia laboral */}
                         <section>
                             <h2 className={`${borderColor} mb-2 text-lg font-bold border-b-2 uppercase tracking-widest`}>
                                 Experiencia Laboral
                             </h2>
-
-                            {/* Tiempo completo */}
                             {fulltimeExperiences.length > 0 && (
                                 <>
                                     <h3 className="mb-0 font-bold leading-tight">Tiempo completo</h3>
@@ -83,7 +69,7 @@ export function TemplateBasic({ data }: TemplateBasicProps) {
                                             {fulltimeExperiences.map((exp) => (
                                                 <li key={exp.id} className="mb-1">
                                                     <h3 className="inline font-semibold leading-tight">
-                                                        {exp.company}
+                                                        {exp.name}
                                                         <span className="text-sm px-2 font-bold">|</span>
                                                         <span className="text-sm font-normal">{exp.dateRange}</span>
                                                     </h3>
@@ -97,8 +83,6 @@ export function TemplateBasic({ data }: TemplateBasicProps) {
                                     </div>
                                 </>
                             )}
-
-                            {/* Consultor / Freelancer */}
                             {freelanceExperiences.length > 0 && (
                                 <>
                                     <h3 className="mb-0 font-bold leading-tight">Consultor/Freelancer</h3>
@@ -107,7 +91,7 @@ export function TemplateBasic({ data }: TemplateBasicProps) {
                                             {freelanceExperiences.map((exp) => (
                                                 <li key={exp.id} className="mb-1">
                                                     <h3 className="inline font-semibold leading-tight">
-                                                        {exp.company}
+                                                        {exp.name}
                                                         <span className="text-sm px-2 font-bold">|</span>
                                                         <span className="text-sm font-normal">{exp.dateRange}</span>
                                                     </h3>
@@ -124,11 +108,8 @@ export function TemplateBasic({ data }: TemplateBasicProps) {
                         </section>
                     </div>
                 </div>
-
-                {/* Right Column - 2/5 */}
                 <div className="col-span-2">
                     <div className="w-full p-4">
-                        {/* Formación académica */}
                         <section className="mb-2">
                             <h2 className={`${borderColor} mb-2 text-lg font-bold border-b-2 uppercase tracking-widest`}>
                                 Formación Académica
@@ -138,8 +119,6 @@ export function TemplateBasic({ data }: TemplateBasicProps) {
                                 dangerouslySetInnerHTML={{ __html: education }}
                             />
                         </section>
-
-                        {/* Habilidades */}
                         <section className="mb-2">
                             <h2 className={`${borderColor} mb-2 text-lg font-bold border-b-2 uppercase tracking-widest`}>
                                 Habilidades
@@ -156,8 +135,6 @@ export function TemplateBasic({ data }: TemplateBasicProps) {
                                 ))}
                             </ul>
                         </section>
-
-                        {/* Repositorio */}
                         {repositories && (
                             <section className="mb-2">
                                 <h2 className={`${borderColor} mb-2 text-lg font-bold border-b-2 uppercase tracking-widest`}>
@@ -166,8 +143,6 @@ export function TemplateBasic({ data }: TemplateBasicProps) {
                                 <p className="text-sm leading-tight">{repositories}</p>
                             </section>
                         )}
-
-                        {/* Certificados */}
                         {certifications && (
                             <section className="mb-2">
                                 <h2 className={`${borderColor} mb-2 text-lg font-bold border-b-2 uppercase tracking-widest`}>
@@ -176,8 +151,6 @@ export function TemplateBasic({ data }: TemplateBasicProps) {
                                 <p className="text-sm leading-tight">{certifications}</p>
                             </section>
                         )}
-
-                        {/* Información adicional */}
                         {extraInfo && (
                             <section className="mb-2">
                                 <h2 className={`${borderColor} mb-2 text-lg font-bold border-b-2 uppercase tracking-widest`}>
