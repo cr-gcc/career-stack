@@ -19,7 +19,7 @@ export function LinkIcon({
     }
     return (
         <Link
-            to={url}
+            to={url ?? '#'}
             onClick={onClick}
             className={`flex items-center px-2 py-1 rounded-md transition-colors ${className}`}
         >

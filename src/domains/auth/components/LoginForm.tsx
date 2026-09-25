@@ -21,6 +21,7 @@ export function LoginForm() {
                 </div>
                 <div className="mb-3">
                     <InputLabelIcon
+                        id="email"
                         type="text"
                         label={t('auth.login.email')}
                         icon={<MdOutlineEmail />}
@@ -30,6 +31,7 @@ export function LoginForm() {
                 </div>
                 <div className="mb-3">
                     <InputLabelIcon
+                        id="password"
                         type="password"
                         label={t('auth.login.password')}
                         icon={<RiLockLine />}
@@ -48,7 +50,7 @@ export function LoginForm() {
                         label={t('auth.login.submit')}
                         labelPositionIcon="left"
                         className="w-full text-sm text-white bg-primary hover:bg-primary-hover"
-                        onClick={() => alert("Iniciando sesión...")}
+                        type="submit"
                     />
                 </div>
                 <div className="mb-4 text-center">

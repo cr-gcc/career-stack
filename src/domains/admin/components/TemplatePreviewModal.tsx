@@ -61,7 +61,7 @@ export function TemplatePreviewModal({ modalOpen }: TemplatePreviewModalProps) {
                 </div>
                 <div className="flex-1 overflow-auto flex items-start justify-center p-6 bg-black/20 mb-3">
                     <div style={{ transformOrigin: 'top center' }}>
-                        <TemplateComponent data={cv} />
+                        {TemplateComponent && <TemplateComponent data={cv} />}
                     </div>
                 </div>
                 <div className="flex justify-end gap-2 shrink-0">
