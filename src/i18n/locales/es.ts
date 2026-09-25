@@ -106,5 +106,11 @@ export const es = {
     jobOffers: {
         title: 'Ofertas de Empleo',
         subtitle: 'Ofertas de empleo disponibles, en las cuales podrás postular.',
-    }
+    },
+
+    validation: {
+        required: 'Este campo es obligatorio',
+        email: 'Ingresa un correo electrónico válido',
+        passwordMin: 'La contraseña debe tener al menos 8 caracteres',
+    },
 } as const

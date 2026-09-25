@@ -108,4 +108,11 @@ export const en = {
         title: 'Job Offers',
         subtitle: 'Available job offers, in which you can apply.',
     },
+
+    validation: {
+        required: 'This field is required',
+        email: 'Enter a valid email',
+        passwordMin: 'Password must be at least 8 characters long',
+    },
+
 } as const
