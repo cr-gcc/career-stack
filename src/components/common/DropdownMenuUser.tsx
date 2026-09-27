@@ -1,11 +1,21 @@
 import { useUIStore } from "@stores/uiStore"
+import { useNavigate } from "react-router"
 import { DropdownMenu } from "@components/ui/DropdownMenu";
 import { FaUserCircle } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
+import { authService } from '@domains/auth/services/auth.service'
 
 export function DropdownMenuUser() {
-    const { toggleModal } = useUIStore()
+    const { toggleModal, setIsLoading } = useUIStore()
     const { t } = useTranslation()
+    const navigate = useNavigate()
+
+    const handleLogout = async () => {
+        setIsLoading(true)
+        await authService.logout()
+        setIsLoading(false)
+        navigate('/login')
+    }
 
     return (
         <DropdownMenu
@@ -18,7 +28,7 @@ export function DropdownMenuUser() {
                 {t("dropdownMenuUser.profile")}
             </button>
             <button
-                onClick={() => alert("Cerrar sesión")}
+                onClick={() => handleLogout()}
                 className="cursor-pointer hover:text-primary transition-colors w-full text-start">
                 {t("dropdownMenuUser.logout")}
             </button>
