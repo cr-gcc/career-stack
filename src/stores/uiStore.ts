@@ -11,6 +11,10 @@ interface UIState {
     // Modal State
     activeModal: ModalType
     toggleModal: (modal: ModalType) => void
+
+    // Loading State
+    isLoading: boolean
+    setIsLoading: (isLoading: boolean) => void
 }
 
 export const useUIStore = create<UIState>((set) => ({
@@ -30,5 +34,12 @@ export const useUIStore = create<UIState>((set) => ({
     toggleModal: (modal: ModalType) =>
         set((state) => ({
             activeModal: state.activeModal === modal ? null : modal,
+        })),
+
+    // Loading
+    isLoading: false,
+    setIsLoading: (isLoading: boolean) =>
+        set(() => ({
+            isLoading,
         })),
 }))

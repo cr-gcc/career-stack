@@ -2,6 +2,7 @@ import { Outlet } from 'react-router'
 import { Header } from "@components/layouts/Header"
 import { SideBar } from "@components/layouts/SideBar"
 import { ProfileModal } from "@components/common/ProfileModal"
+import { SplashScreenLoading } from "@components/ui/SplashScreenLoading"
 import { useUIStore } from "@stores/uiStore"
 
 export function MainLayout() {
@@ -15,6 +16,7 @@ export function MainLayout() {
                     <Outlet />
                 </main>
                 {activeModal && activeModal === 'profile' && <ProfileModal />}
+                <SplashScreenLoading />
             </div>
         </div>
     )
