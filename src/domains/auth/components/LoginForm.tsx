@@ -72,6 +72,8 @@ export function LoginForm() {
                         labelPositionIcon="left"
                         className="w-full text-sm text-white bg-primary hover:bg-primary-hover"
                         type="submit"
+                        disabled={loading}
+                        aria-busy={loading}
                     />
                 </div>
                 {loading && <ProgressBar />}

@@ -1,11 +1,11 @@
+import type { ButtonHTMLAttributes } from 'react';
+
 type LabelPositionIcon = 'right' | 'left';
-export interface ButtonIconProps {
+export interface ButtonIconProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string;
     label?: string;
     icon?: React.ReactNode;
     labelPositionIcon?: LabelPositionIcon;
-    onClick?: () => void;
-    type?: "button" | "submit" | "reset";
 }
 export function ButtonIcon({
     icon,
@@ -13,13 +13,15 @@ export function ButtonIcon({
     className,
     labelPositionIcon = 'right',
     type = 'button',
-    onClick
+    disabled,
+    ...props
 }: ButtonIconProps) {
     return (
         <button
             type={type}
-            onClick={onClick}
-            className={`cursor-pointer flex items-center justify-center gap-1 px-2 py-1 rounded-md transition-colors ${className}`}
+            disabled={disabled}
+            className={`cursor-pointer flex items-center justify-center gap-1 px-2 py-1 rounded-md transition-colors disabled:cursor-not-allowed disabled:opacity-60 ${className ?? ''}`}
+            {...props}
         >
             {labelPositionIcon === 'right' && icon}
             {label && <span>{label}</span>}
