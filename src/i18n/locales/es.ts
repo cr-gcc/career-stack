@@ -28,6 +28,9 @@ export const es = {
             termsAndConditions: 'Términos de Servicio',
             and: 'y la',
             privacyPolicy: 'Política de Privacidad',
+            errors: {
+                invalidCredentials: 'Correo electrónico o contraseña incorrectos',
+            },
         },
     },
 
