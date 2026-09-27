@@ -1,8 +1,10 @@
 import { useState } from "react"
 import { useTranslation } from "react-i18next"
+import { useNavigate } from "react-router"
 import type { FormEvent } from "react"
 import type { LoginCredentials } from "@/domains/auth/types/auth.types"
 import { loginSchema } from "@/domains/auth/schemas/login.schema"
+import { useAuth } from "@/domains/auth/hooks/useAuth"
 
 type LoginFormErrors = Partial<
     Record<keyof LoginCredentials, string>
@@ -11,7 +13,8 @@ type LoginFormErrors = Partial<
 interface UseLoginFormReturn {
     form: LoginCredentials
     loading: boolean
-    errors: LoginFormErrors
+    formErrors: LoginFormErrors
+    authError: string | null
     handleChange: <K extends keyof LoginCredentials>(
         key: K,
         value: LoginCredentials[K]
@@ -20,13 +23,16 @@ interface UseLoginFormReturn {
 }
 
 export function useLoginForm(): UseLoginFormReturn {
-    const { t } = useTranslation()
     const [form, setForm] = useState<LoginCredentials>({
         email: '',
         password: '',
     })
     const [loading, setLoading] = useState<boolean>(false)
-    const [errors, setErrors] = useState<LoginFormErrors>({})
+    const [formErrors, setFormErrors] = useState<LoginFormErrors>({})
+    const [authError, setAuthError] = useState<string | null>(null)
+    const { login } = useAuth()
+    const { t } = useTranslation()
+    const navigate = useNavigate()
 
     const handleChange = <K extends keyof LoginCredentials>(
         key: K,
@@ -41,7 +47,8 @@ export function useLoginForm(): UseLoginFormReturn {
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
         setLoading(true)
-        setErrors({});
+        setFormErrors({});
+        setAuthError(null);
 
         const result = loginSchema(t).safeParse(form);
 
@@ -51,17 +58,26 @@ export function useLoginForm(): UseLoginFormReturn {
                 email: fieldErrors.email?.[0] || '',
                 password: fieldErrors.password?.[0] || '',
             }
-            setErrors(parseError)
+            setFormErrors(parseError)
             setLoading(false)
             return
         }
 
+        try {
+            await login(result.data)
+            navigate('/')
+        } catch (error) {
+            setAuthError(error instanceof Error ? error.message : String(error))
+        } finally {
+            setLoading(false)
+        }
     }
 
     return {
         form,
         loading,
-        errors,
+        formErrors,
+        authError,
         handleChange,
         handleSubmit,
     }
