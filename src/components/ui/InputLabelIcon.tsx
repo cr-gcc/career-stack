@@ -6,12 +6,10 @@ export interface InputLabelIconProps extends InputHTMLAttributes<HTMLInputElemen
     icon?: React.ReactNode;
     type?: string
     className?: string;
-    error?: string;
 }
 
-export function InputLabelIcon({ id, label, icon, type, className, error, ...props
+export function InputLabelIcon({ id, label, icon, type, className, ...props
 }: InputLabelIconProps) {
-    const errorId = id + '-error'
 
     return (
         <div className="flex flex-col gap-1.5 w-full">
@@ -23,17 +21,10 @@ export function InputLabelIcon({ id, label, icon, type, className, error, ...pro
                 <input
                     id={id}
                     type={type}
-                    aria-invalid={Boolean(error)}
-                    aria-describedby={error ? errorId : undefined}
                     className={`bg-transparent outline-none text-tp placeholder:text-ts/50 ${className}`}
                     {...props}
                 />
             </div>
-            {error && (
-                <p id={errorId} className={'text-xs text-red-500'} role={'alert'}>
-                    {error}
-                </p>
-            )}
         </div>
     )
 }
