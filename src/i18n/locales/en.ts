@@ -30,6 +30,8 @@ export const en = {
             privacyPolicy: 'Privacy Policy',
             errors: {
                 invalidCredentials: 'Email or password incorrect',
+                network: 'Could not connect to the server. Check your connection and try again',
+                unexpected: 'Unable to sign in. Please try again later',
             },
         },
     },

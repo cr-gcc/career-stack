@@ -30,6 +30,8 @@ export const es = {
             privacyPolicy: 'Política de Privacidad',
             errors: {
                 invalidCredentials: 'Correo electrónico o contraseña incorrectos',
+                network: 'No se pudo conectar con el servidor. Revisa tu conexi\u00f3n e int\u00e9ntalo de nuevo',
+                unexpected: 'No fue posible iniciar sesi\u00f3n. Int\u00e9ntalo de nuevo m\u00e1s tarde',
             },
         },
     },
